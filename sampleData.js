@@ -1,4 +1,4 @@
-var data = [
+var sampleData = [
     {
         "name": "Mango Banganapalli",
         "image": "https://s3.ap-south-1.amazonaws.com/fraazo-prod/images/images/000/003/372/original/data?1643986229",
