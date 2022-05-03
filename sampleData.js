@@ -132,3 +132,12 @@ var sampleData = [
         "price": "3"
     }
 ]
+
+var carouselImages = [
+    "https://s3.ap-south-1.amazonaws.com/fraazo-prod/web_ban/2476.png?1651539391",
+    "https://s3.ap-south-1.amazonaws.com/fraazo-prod/web_ban/2477.png?1651539464",
+    "https://s3.ap-south-1.amazonaws.com/fraazo-prod/web_ban/2478.png?1651539527",
+    "https://s3.ap-south-1.amazonaws.com/fraazo-prod/web_ban/2482.png?1651539592",
+    "https://s3.ap-south-1.amazonaws.com/fraazo-prod/web_ban/2166.png?1651056728"
+];
+
