@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #item{
+            border: 2px solid red;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <div id="item">
+
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var sampleData = [
+    {
+        name: "Mango Banganapalli",
+        image: "https://s3.ap-south-1.amazonaws.com/fraazo-prod/images/images/000/003/372/original/data?1643986229",
+        quantity: "1kg",
+        price: "99"
+    },
+    {
+        name: "Bottle Gourd (Dudhi / Lauki)",
+        image: "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VBOT12.png",
+        quantity: "1 pc",
+        price: "11"
+    },
+    
+]
+localStorage.setItem("aman_productsdata",JSON.stringify(sampleData));
+
+display(JSON.parse(localStorage.getItem("aman_productsdata")))
+function display(data){
+
+    data.forEach(function(ele){
+
+        // console.log(ele)
+        var card=document.createElement("div")
+
+        var img=document.createElement("img")
+        img.setAttribute("src",ele.image)
+        var titlename=document.createElement("p")
+        titlename.textContent=ele.name
+
+        var dic=document.createElement("p")
+        dic.innerText=ele.quantity
+        var price=document.createElement("p")
+        price.innerText=ele.price
+
+        var addcart=document.createElement("button")
+        addcart.innerText="Add to Cart";
+        addcart.style.color = "blue";
+        addcart.style.cursor = "pointer";
+        addcart.addEventListener("click", function () {
+          //writing logic here
+          addcarfun(ele);
+        });
+        
+
+        card.append(img,titlename,dic,price,addcart)
+        document.querySelector("#item").append(card)
+    })
+}
+var aman_cart_data=JSON.parse(localStorage.getItem("cart_data"))  || []
+function  addcarfun(ele){
+    aman_cart_data.push(ele)
+    console.log(aman_cart_data)
+    localStorage.setItem("cart_data",JSON.stringify(aman_cart_data))
+}
+
+
+
+
+</script>

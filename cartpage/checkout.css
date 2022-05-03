@@ -1,0 +1,80 @@
+*{margin: 0px;padding: 0px;}
+#aman_screan{
+    border: 2px solid red;
+    height: auto;
+}
+
+#aman_screan>div{
+    border: 2px solid red;
+    height: auto;
+    width: 90%;
+    margin: auto;
+}
+#aman_navbar{
+    border: 2px solid green;
+    margin: auto;
+    width: auto;
+    height: 90px;
+    margin: 10px;
+
+}
+#aman_status{
+
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    
+
+    border: 2px solid red;
+    background-color: #eff9f7;
+    height: 80px;
+    margin: 10px;
+    
+}#aman_status>div{
+    display: flex;
+
+    border: 2px solid red;
+    height: 30px;
+    width: 60%;
+    justify-content: space-around;
+    align-items: center;
+}
+#aman_checkout{
+    border: 2px solid yellow;
+    margin: 20px;
+    height: 500px;
+}
+#aman_footer_section{
+    border: 2px solid red;
+    height: 400px;
+    margin: 10px;
+}
+
+#subcart{
+    display: flex;
+    border: 2px solid red;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+}
+#btn1{
+    width: 60px;
+    height: 30px;
+    font-size: 20px;
+    border: 2px solid teal;
+    border-radius: 10px 0px 0px 10px;
+}
+#btn2{
+    width: 60px;
+    height: 30px;
+    font-size: 20px;
+    border: 2px solid teal;
+    border-radius: 0px 10px 10px 0px;
+}
+#counter{
+    display: flex;
+    margin: 10px;
+}
+#billbox{
+    border:2px solid red;
+}
