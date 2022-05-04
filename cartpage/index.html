@@ -72,14 +72,13 @@ function display(data){
         document.querySelector("#item").append(card)
     })
 }
+
+
 var aman_cart_data=JSON.parse(localStorage.getItem("cart_data"))  || []
 function  addcarfun(ele){
     aman_cart_data.push(ele)
     console.log(aman_cart_data)
     localStorage.setItem("cart_data",JSON.stringify(aman_cart_data))
 }
-
-
-
 
 </script>
