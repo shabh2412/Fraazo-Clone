@@ -1,9 +1,9 @@
-body {
-    margin: 0;
+* {
+    font-family: 'Quicksand', sans-serif;
 }
-
-/* NAVIGATION BAR STYLING */
-
+* {
+    box-sizing: border-box;   
+}
 nav {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     display: flex;
@@ -13,6 +13,7 @@ nav {
     width: 90;
     box-sizing: border-box;
     padding: 20px 10px;
+    z-index: 100;
 }
 nav > div {
     display: flex;
@@ -67,31 +68,84 @@ body > nav > div:nth-child(3) > div {
     }
 }
 
-/* NAVIGATION BAR STYLING ENDS */
-
-/* HERO SECTION STYLING */
-#heroDiv {
-    display: flex;
-    width: 100%;
-    box-sizing: border-box;
+/* footer navigation */
+#footerNav {
+    display: none;
+    justify-content: space-evenly;
+    position: sticky;
+    bottom: 0;
+    height: 50px;
+    background-color: #fff;
+    align-items: center;
     gap: 10px;
+    padding: 10px 20px;
 }
-
-#heroDiv > div:nth-child(2) {
-    flex-grow: 0.5;
-    border-radius: 20px;
-}
-
-#heroDiv > div:first-child {
+#footerNav > div {
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 10px;
     flex-grow: 1;
-    /* background-color: red; */
-    display: flex;
+    text-align: center;
+}
+@media all and (min-width:100px) and (max-width:700px) {
+    #footerNav {
+        display: flex;
+    }
 }
 
-.carousel-item {
-    border-radius: 20px;
+/* .carousel{
+    border: 1px solid red;
+} */
+.carousel-indicators {
+    margin-bottom: 0 !important;
 }
 
-#heroCarousel > div > div.carousel-item > img {
+#heroCarousel > ol > li {
+    color: black;
+    background-color: #abe1cf;
+    border-radius: 50%;
+    width: 7px;
+    height: 7px;
+    /* margin: 0 5px; */
+}
+
+#heroCarousel > ol > li.active {
+    background-color: #27ba89;
+}
+
+/* slick slider section properties */
+
+.frz-lh-38 {
+    line-height: 38px;
+}
+.frz-font-30 {
+    font-size: 30px;
+}
+
+.frz-fw-300 {
+    font-weight: 300;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .frz-web-container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .frz-web-container {
+        padding-left: 71px;
+        padding-right: 71px;
+    }
+}
+
+.frz-tm-40 {
+    margin-top: 40px;
+}
+
+.slick-title-hr {
     width: 100%;
+    border-radius: 50px;
+    border-bottom: 1px solid #eee;
 }
