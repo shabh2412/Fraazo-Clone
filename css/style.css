@@ -4,6 +4,29 @@
 * {
     box-sizing: border-box;   
 }
+
+/* font stylings */
+
+.fs-16 {
+    font-size: 16px;
+}
+.fs-14 {
+    font-size: 14px;
+}
+.fs-13 {
+    font-size: 13px;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fa-solid {
+    color: #999999;
+}
+
+/* font styling ends */
+
 nav {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     display: flex;
@@ -57,6 +80,11 @@ body > nav > div:nth-child(3) > div {
     /* border: 1px solid green; */
     /* cursor: pointer; */
 }
+
+body > nav > div:nth-child(3) > div:hover > * {
+    color: black;
+}
+
 body > nav > div:nth-child(3) > div {
     /* border: 1px solid red; */
     cursor: pointer;
@@ -148,4 +176,73 @@ body > nav > div:nth-child(3) > div {
     width: 100%;
     border-radius: 50px;
     border-bottom: 1px solid #eee;
+}
+
+
+.card {
+    border-radius: 4px;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    /* padding: 1rem 1rem; */
+    box-sizing: border-box;
+    width: 100%;
+    /* border-right: 1px solid gray; */
+}
+
+
+.price-qty-btn {
+    display:flex;
+}
+
+.price-qty {
+    display: flex;
+    flex-direction: column;
+}
+
+.price.fw-500 {
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+}
+
+.btn.btn-outline-cart.rounded-pill.text-uppercase.px-3.py-1.d-flex.align-items-center {
+    justify-content: space-evenly;
+}
+
+
+/* div.slick-content.row > .card > div > .card-body > .price-qty-btn > .price-qty > .price {
+    display: flex;
+    justify-content: start;
+    gap: 1em;
+} */
+
+/* div.slick-content.row > .card > div > .card-body > .price-qty-btn > div.addToCartButton > div > p {
+    margin-bottom: 0;
+}
+div.slick-content.row > .card > div > .card-body > .price-qty-btn > .price-qty > .price > p {
+    margin-bottom: 0;
+}
+*/
+.slick-initialized.slick-slider > div > div > div > div.card-body.bg-white > div > div.price-qty > div > p:nth-child(2) {
+    text-decoration: line-through;
+    color: #828282;
+}
+.slick-content.row.slick-initialized.slick-slider > div > div > div > div.card-body.bg-white > div > div.addToCartButton > div > p {
+    margin: 0;
+}
+
+.btn-outline-cart {
+    color: #4fbb90 !important;
+    border-color: #4fbb90 !important;
+}
+
+div.slick-content.row > .card > div > .card-body > .price-qty-btn > div.addToCartButton > div.btn > * {
+    color: #4fbb90;
+    flex-grow: 1;
+}
+
+.price-qty-btn {
+    display: flex;
 }
