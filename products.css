@@ -1,16 +1,14 @@
 #main{
     width: 93%;
     height: 420px;
-    border: 1px solid red;
     margin: auto;
-    margin-top: 120px;
+    margin-top: 70px;
     display: flex;
     justify-content: space-around;
 }
 #first{
     width: 25%;
     height: 50%;
-    border: 1px solid green;
     margin-top: 70px;
     margin-left: 130px;
 
@@ -23,9 +21,62 @@
 #second{
     height: 100%;
     width: 50%;
-    border: 1px solid green;
     margin-right: 70px;
 }
+
+
 #fs{
-    margin-left: 20px;
+    height: 40%;
+   margin-bottom: 0px;
+   padding-left: 10px;
+  
+    color: gray;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+}
+#sc{
+    height: 12%;
+   color: gray;
+   padding-top: 10px;
+   padding-left: 10px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    display: flex;
+    align-items: center;
+}
+#sc>p:nth-child(2){
+margin-left: 25px;
+}
+#sc>p:nth-child(3){
+    margin-left: 30px;
+    }
+#th{
+    height: 48%;
+    color: gray;
+    padding-left: 15px;
+    padding-top: 20px;
+     background-color:#E8E8E8 ;
+     border-radius: 15PX;
+}
+
+button{
+    border-radius: .1px;
+    border:1px solid #4fbb90;
+    
+   color: #4fbb90;
+    background-color:#fff ;
+    padding: 3px 15px 3px 15px;
+  
+}
+#sub{
+    display: flex;
+}
+#sub>p{
+    color: rgb(232, 125, 19);
+
+}
+#sub>p+p{
+    padding-left: 20px;
+    color: gray;
+}
+h4{
+    color: black;
 }
