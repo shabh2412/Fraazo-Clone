@@ -138,6 +138,8 @@ body > nav > div:nth-child(3) > div {
 /* .carousel{
     border: 1px solid red;
 } */
+
+
 .carousel-indicators {
     margin-bottom: 0 !important;
 }
@@ -153,6 +155,31 @@ body > nav > div:nth-child(3) > div {
 
 #heroCarousel > ol > li.active {
     background-color: #27ba89;
+}
+
+@media all and (min-width:320px) and (max-width:480px) {
+    #heroDiv {
+        padding-right: 0.5rem!important;
+        padding-left: 0.5rem!important;
+    }
+}
+
+@media all and (min-width:481px) and (max-width:768px) {
+    #heroDiv {
+        /* padding-right: 0.5rem!important;
+        padding-left: 0.5rem!important; */
+        margin-right: 1rem!important;
+        margin-left: 1rem!important;
+    }
+}
+
+@media all and (min-width:769px) {
+    #heroDiv {
+        padding-right: 0.5rem!important;
+        padding-left: 0.5rem!important;
+        margin-right: 3rem!important;
+        margin-left: 3rem!important;
+    }
 }
 
 /* slick slider section properties */
