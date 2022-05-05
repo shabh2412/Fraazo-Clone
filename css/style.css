@@ -112,7 +112,7 @@ body > nav > div:nth-child(3) > div {
 #footerNav {
     display: none;
     justify-content: space-evenly;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     height: 50px;
     background-color: #fff;
