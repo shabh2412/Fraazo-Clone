@@ -10,5 +10,7 @@ prod = {
     "oldPrice": "150"
 }
 
+categories = ['mangoes','fruits','vegetables','herbs','dry fruits','kitchen staples'];
+
 arr = [prod,prod,prod,prod,prod,prod,prod];
-console.log(arr);
+// console.log(arr);
