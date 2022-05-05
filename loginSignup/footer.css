@@ -1,0 +1,178 @@
+.footer1{
+    width:100%;
+    height: 700px;
+    border: 1px solid teal;
+    
+    display: flex;
+}
+.footer1 > div{
+    width: 50%;
+    height: 98%;
+    
+    border: 1px solid green;
+}
+.footer1> div #im{
+ 
+    width: 70%;
+    height: 60%;
+    margin-top: 110px;
+    margin-left: 40px;
+
+}
+
+.footer1>#right img{
+    width: 30px;
+    height: 30px;
+
+
+}
+
+
+#right h1{
+    text-align: center;
+    margin-top: 70px;
+}
+#right h5{
+   padding-left: 140px;
+}
+#r1{
+   display: flex;
+   border: 1px solid rgb(201, 201, 201);
+   width: 250px;
+   height: 60px;
+   border-radius: 30px;
+   margin-left: 190px;
+   }
+#r1 div{
+    display: flex;
+    border-radius: 25px;
+    
+}  
+#r1 div:nth-child(1){
+    background-color: black;
+    color: white;
+    }
+    #r1 p{
+        margin-top: 25px;
+        margin-right: 5px;
+    }
+
+
+#r1 img{
+   padding: 20px;
+}
+/* #r1 p{
+   margin-top: 28px;
+} */
+#r1 a{
+   text-decoration: none;
+   color: black
+}
+h5{
+   margin-left: 50px;
+   font-size: large;
+   color: rgb(97, 95, 95);
+}
+
+#btn{
+   margin-left: 200px;
+  font-size: 40px;
+  padding: 20px 130px;
+  background-color: rgb(150, 243, 221);
+  color: white;
+ 
+}
+input{
+   margin-top: 20px;
+   margin-bottom: 30px;
+   margin-left: 200px;
+   font-size: 30px;
+   padding-right: 20px;
+
+}
+.footer2 {
+   width: 400px;
+   /* border: 1px solid red; */
+   display: flex;
+   margin-left: 200px;
+   margin-top: 30px;
+   color: rgb(122, 118, 118);
+}
+.footer2 img{
+   margin-left: 30px;
+   margin-top: 10px;
+}
+
+/* second footer */
+.footerBgImg{
+   width: 100%;
+   height: 150px;
+   /* border: 1px solid yellow; */
+   }
+   .footerBgImg{
+       background-image:  url( https://fraazo.com/static/footerDesign-26fcca451f726500fd06e7fc02d09cb4.svg);
+       
+   }
+   .footerBgImg2 {
+       background-color: rgb(22,82,65);
+       color: white;
+    
+       
+   }
+.footerBgImg2 >.footer3{
+   /* border: 1px solid tomato; */
+   width: 100%;
+   height: 300px;
+   display: flex;
+   
+   
+}
+
+
+.footer3>div{
+   width: 23%;
+   height: 300px;
+   /* border: 1px solid blue; */
+   margin-left: 20px;
+   margin-top: 50px;
+   
+}
+.footer3 img{
+width: 70%;
+}
+.footer3 p{
+   font-size: 20px;
+}
+.footer3>div li{
+   text-decoration: black;
+}
+
+.app {
+   display: flex;
+}
+.footer3 h3{
+   margin-left: 40px;
+}
+.footer3 ul a li {
+   color: white;
+   list-style: none;
+   line-height: 30px;
+   color: rgb(233, 232, 232);
+   
+}
+.footer3 a{
+   text-decoration: none;
+   
+}
+.app{
+margin-left: 40px; 
+}
+.about{
+   width: 100%;
+   height:100%;
+   /* border: 1px solid green; */
+   
+}
+.about p{
+ line-height: 20px;
+}
