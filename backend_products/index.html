@@ -23,6 +23,16 @@
             <input required type="text" id="name" class="form-control" placeholder="Product name" aria-label="Product name">
         </div>
         <div>
+            <select name="category" id="category">
+                <option value="mangoes">Mangoes</option>
+                <option value="fruits">fruits</option>
+                <option value="vegetables">vegetables</option>
+                <option value="herbs">herbs</option>
+                <option value="dry fruits">dry fruits</option>
+                <option value="kitchen staples">kitchen staples</option>
+            </select>
+        </div>
+        <div>
             <input required type="url" id="url" class="form-control" placeholder="Product Image URL" aria-label="Product Image URL">
         </div>
         <div>    
@@ -73,6 +83,7 @@
             currentPrice : form.currentPrice.value,
             benefits : form.benefits.value,
             info : form.info.value,
+            category: form.category.value,
         };
         if(form.oldPrice.value!=="") {
             obj.oldPrice = form.oldPrice.value;
