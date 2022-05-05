@@ -30,27 +30,22 @@
 
 #fs{
     height: 40%;
-   margin-bottom: 0px;
-   padding-left: 10px;
+    margin-bottom: 0px;
+    padding-left: 10px;
   
     color: gray;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
 }
 #sc{
     height: 12%;
-   color: gray;
-   padding-top: 10px;
-   padding-left: 10px;
+    width: 60%;
+    color: gray;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
     display: flex;
     align-items: center;
+    justify-content: space-around;
 }
-#sc>p:nth-child(2){
-margin-left: 25px;
-}
-#sc>p:nth-child(3){
-    margin-left: 30px;
-    }
+
 #comb{
 display: flex;
     }
@@ -63,7 +58,7 @@ display: flex;
     padding-left: 15px;
     padding-top: 20px;
      background-color:#E8E8E8 ;
-     border-radius: 15PX;
+     border-radius:  0px 15px 15px 15PX;
 }
 
 #fs>button{
@@ -98,4 +93,30 @@ span{
 h4{
     color: black;
 }
+
+#ds{
+ 
+    padding-top: 22px;
+    padding-bottom: 11px;
+    margin-left: -50px;
+    font-size: 20px;
+    
+}
+#bn{
+   
+    padding-top: 22px;
+    padding-bottom: 11px;
+    margin-left: -40px;
+    font-size: 20px;
+    
+    
+}
+#inf{
+   
+    padding-top: 22px;
+    padding-bottom: 11px;
+    margin-left: -40px;
+    font-size: 20px;
+}
+
 

@@ -28,13 +28,12 @@
  qty.innerText=sampleData.quantity+" pcs";
 
  var sym=document.createElement("div");
- sym.innerHTML="<i class='fa-regular fa-circle-exclamation'></i>";
+ sym.setAttribute("id","sym")
+ sym.innerHTML="<i class='fa-solid fa-circle-info'></i>";
 
  var combo=document.createElement("div");
  combo.setAttribute("id","comb")
  combo.append(qty,sym);
-
- 
 
  var price=document.createElement("p");
  price.innerText="₹"+sampleData.price;
@@ -43,12 +42,7 @@
  stprice.innerText="₹"+sampleData.stprice;
 
  var btn=document.createElement("button");
-
  btn.innerHTML="<i class='fa-solid fa-cart-plus'></i><span> ADD</span>";
- 
- 
- 
-
  
  var sub=document.createElement("div");
  sub.setAttribute("id","sub")
@@ -59,16 +53,13 @@
 
  var first=document.querySelector("#first").append(pic);
 
- var dsc=document.createElement("p")
+ var dsc=document.createElement("h5")
  dsc.setAttribute("id","ds")
  dsc.innerText="Description";
  dsc.style.cursor="pointer";
  dsc.addEventListener("click",dscFunction)
   
- 
-
- 
- var ben=document.createElement("p")
+ var ben=document.createElement("h5")
  ben.innerText="Benefits";
  ben.setAttribute("id","bn")
  ben.style.cursor="pointer";
@@ -76,7 +67,7 @@
   benFunction()
  })
 
- var info=document.createElement("p")
+ var info=document.createElement("h5")
  info.innerText="Info";
  info.setAttribute("id","inf")
  info.style.cursor="pointer";
@@ -89,22 +80,19 @@
 
  var th=document.querySelector("#th");
  
+var second=document.querySelector("#second").append(fs,sc,th);
 
- 
-
-     
-
- var second=document.querySelector("#second").append(fs,sc,th);
-
-    //document.querySelector("#main").append(first);
+   
   }
   function dscFunction()
   {
     th.innerText=sampleData.name;
     document.querySelector("#ds").style.color="black";
-  
     document.querySelector("#bn").style.color="grey";
     document.querySelector("#inf").style.color="grey";
+    document.querySelector("#ds").style.u="green";
+    document.querySelector("#bn").style.u="none";
+    document.querySelector("#inf").style.u="none";
    
   }
 
@@ -115,6 +103,9 @@
     document.querySelector("#ds").style.color="grey";
     document.querySelector("#bn").style.color="black";
     document.querySelector("#inf").style.color="grey";
+    document.querySelector("#ds").style.u="none";
+    document.querySelector("#bn").style.u="green";
+    document.querySelector("#inf").style.u="none";
   }
 
   function infoFunction()
@@ -123,6 +114,9 @@
     document.querySelector("#ds").style.color="grey";
     document.querySelector("#bn").style.color="grey";
     document.querySelector("#inf").style.color="black";
+    document.querySelector("#ds").style.u="none";
+    document.querySelector("#bn").style.u="none";
+    document.querySelector("#inf").style.u="green";
   }
 
 
