@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraazo Backend</title>
+    <style>
+        div {
+            width: 50%;
+            margin: auto;
+        }
+        div > * {
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form id="dataCollectionForm">
+        <div>
+            <input required type="text" id="name" class="form-control" placeholder="Product name" aria-label="Product name">
+        </div>
+        <div>
+            <select name="category" id="category">
+                <option value="mangoes">Mangoes</option>
+                <option value="fruits">fruits</option>
+                <option value="vegetables">vegetables</option>
+                <option value="herbs">herbs</option>
+                <option value="dry fruits">dry fruits</option>
+                <option value="kitchen staples">kitchen staples</option>
+            </select>
+        </div>
+        <div>
+            <input required type="url" id="url" class="form-control" placeholder="Product Image URL" aria-label="Product Image URL">
+        </div>
+        <div>    
+            <input required type="number" id="qty" placeholder="Product Quantity">
+        </div>
+        <div>
+            <select required name="metric" id="metric">
+                <option value="pcs">pcs</option>
+                <option value="kg">kg</option>
+                <option value="g">g</option>
+            </select>
+        </div>
+        <div>
+            <input required type="number" name="currentPrice" id="currentPrice" placeholder="Current Price">
+        </div>
+        <div>
+            <input type="number" name="oldPrice" id="oldPrice" placeholder="Old Price">
+        </div>
+        <div>
+            <textarea required name="benefits" id="benefits" placeholder="benefits" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <textarea required name="info" id="info" placeholder="info" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <input type="submit" value="Submit" id="submit" />
+        </div>
+    </form>
+</body>
+</html>
+<script>
+    var form = document.querySelector('#dataCollectionForm');
+    form.addEventListener('submit', addData);
+
+    products = JSON.parse(localStorage.getItem('products')) || [];
+
+    function addData() {
+        event.preventDefault();
+        // console.log('hello');
+        prod_id = products.length;
+        
+        obj = {
+            id: prod_id,
+            name : form.name.value,
+            image : form.url.value,
+            qty : form.qty.value,
+            metric : form.metric.value,
+            currentPrice : form.currentPrice.value,
+            benefits : form.benefits.value,
+            info : form.info.value,
+            category: form.category.value,
+        };
+        if(form.oldPrice.value!=="") {
+            obj.oldPrice = form.oldPrice.value;
+        }
+        products.push(obj);
+        form.reset();
+        // console.log(products);
+        localStorage.setItem('products',JSON.stringify(products));
+    }
+</script>
