@@ -1,4 +1,4 @@
-var products=[
+[
     {
         "id": 0,
         "name": "Alphonso Mango Devgad",
@@ -1000,5 +1000,132 @@ var products=[
         "info": "Brand - Maya Form - Whole (small) Quantity - 100 g",
         "category": "kitchen staples",
         "oldPrice": "20"
+    },
+    {
+        "id": 87,
+        "name": "Banana Robusta",
+        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/FBAN14.png",
+        "qty": "1",
+        "metric": "kg",
+        "currentPrice": "25",
+        "benefits": "Banana Health Benefits - Helps with digestion & gastrointestinal issues - heartburn, ulcers, constipation - Banana has potassium, which helps in maintaining good heart health & blood pressure - Helps in regulating mood & good for brain health - Makes us feel fuller & helps in improving kidney health Banana Nutrition - Great source of Vitamin B6 & C - Source of minerals like manganese, potassium, folate - Low on Fat, Cholesterol & Sodium - Contains dietary fiber\n",
+        "info": "- The best way to ripen the bananas is to keep it with other fruits in a bowl at room temperature. - One can store bananas in the fridge once they ripen. - Ripe Banana Recipes include Banana Smoothies, Banana Bread, Banana Pancakes, Banana Cake, Banana muffins, & more. - Some regional recipes like Pazham pori, Banana appam, Mangalore buns, Banana sheera, Banana rasayana & more. Did you know? - Bananas usually float on water as they are less dense. - Banana is classified as berry\n",
+        "category": "fruits",
+        "oldPrice": "37"
+    },
+    {
+        "id": 88,
+        "name": "Coconut Tender / Nariyal Pani",
+        "image": "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/257/original/data?1612448669",
+        "qty": "1",
+        "metric": "pcs",
+        "currentPrice": "33",
+        "benefits": "No Details Available",
+        "info": "No Details Available",
+        "category": "fruits",
+        "oldPrice": "38"
+    },
+    {
+        "id": 89,
+        "name": "Blueberry",
+        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/FBLU1.png",
+        "qty": "20",
+        "metric": "pcs",
+        "currentPrice": "229",
+        "benefits": "No Details Available",
+        "info": "No Details Available",
+        "category": "fruits",
+        "oldPrice": "294"
+    },
+    {
+        "id": 90,
+        "name": "Chikoo",
+        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/FCHI13.png",
+        "qty": "500",
+        "metric": "g",
+        "currentPrice": "22",
+        "benefits": "Chikoo is a high calorie fruit with an abundant source of fibers and vitamin A and vitamin C that help to build immunity and skin health.\n",
+        "info": "Chikoo/ Sapota is a delicious calorie-rich fruit belonging to the category of fruits like mango. This fruit is better known as Chikoo in India. Sapota or chikoo is an oval or round shape fruit with brown skin. The unripe fruit has a hard surface and white pulp due to its high content of latex. The latex content reduces as the fruit ripens and its flesh acquires a brown colour. The flesh contains black, shiny bean-like seeds in the center.\n",
+        "category": "fruits",
+        "oldPrice": "32"
+    },
+    {
+        "id": 91,
+        "name": "Coconut",
+        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/FCOC1.png",
+        "qty": "1",
+        "metric": "pcs",
+        "currentPrice": "24",
+        "benefits": "No Details Available",
+        "info": "No Details Available",
+        "category": "fruits"
+    },
+    {
+        "id": 92,
+        "name": "Dragon Fruit",
+        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/FDRA1.png",
+        "qty": "1",
+        "metric": "pcs",
+        "currentPrice": "135",
+        "benefits": "- Dragon fruit contains vitamin C helps to improve skin radiance; also it make your skin glowing, if you make dragon fruit juice and drink it once a day. - It is naturally fat free and high in fiber. - It helps to lower your blood sugar. - Dragon fruit contains probiotics which can kill disease-causing viruses and bacteria and also help to improve digestion of food",
+        "info": "-Dragon fruit is also known as Pitaya, or strawberry pear. -It's a cactus that produces a tropical fruit. It's accessible from everywhere on the planet. -Such a well variety of dragon fruit has pink skin and white meat, although it is the least sweet. -Peel and cut it into sections when you’re ready to eat it. Much like an avocado, you eat the flesh and discard the skin. You could also cut it in half and scoop out the flesh with a spoon or melon baller.",
+        "category": "fruits"
+    },
+    {
+        "id": 93,
+        "name": "Grapes Green",
+        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/FGRA42.png",
+        "qty": "500",
+        "metric": "g",
+        "currentPrice": "49",
+        "benefits": "No Details Available",
+        "info": "No Details Available",
+        "category": "fruits"
+    },
+    {
+        "id": 94,
+        "name": "Mosambi",
+        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/FMOS13.png",
+        "qty": "1",
+        "metric": "kg",
+        "currentPrice": "84",
+        "benefits": "No Details Available",
+        "info": "No Details Available",
+        "category": "fruits"
+    },
+    {
+        "id": 95,
+        "name": "Musk Melon/ Kharabooja",
+        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/FMUS1.png",
+        "qty": "1",
+        "metric": "pcs",
+        "currentPrice": "21",
+        "benefits": "Musk melons are cooling and help in constipation, bladder infections, ulcers, fatigue, colitis, and blood pressure.\n",
+        "info": "Musk melons (Kharbuja) sabzi quick simple and easy to make. Muskmelons, also known as sweet melon, kharbuja, and cantaloupe, are a member of the Cucurbitaceae family and therefore are botanically known as Cucumis melo. A strong \"muskmelon\" pleasant aroma is produced by a ripe melon.\n",
+        "category": "fruits",
+        "oldPrice": "30"
+    },
+    {
+        "id": 96,
+        "name": "Papaya",
+        "image": "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/092/original/data?1620114635",
+        "qty": "1",
+        "metric": "pcs",
+        "currentPrice": "29",
+        "benefits": "Papaya Health Benefits - The antioxidants like carotenoids helps in reducing the risk of cardiovascular diseases - High fiber in papaya helps in lowering cholesterol - Papaya has lycopene which helps in reducing the risk of cancer - Papaya skin is used for facial treatments - for glowing skin Papaya Nutrition - Contains a high level of antioxidants which helps in preventing the oxidation of cholesterol. - A good source of fiber - Has vitamins A, vitamin C & vitamin E\n",
+        "info": "- Papaya ripens quickly when wrapped in a newspaper. - Or one can also place papaya near some bananas to ripen the papayas quickly. - Once the papaya is ripe, one can cut it & remove the seeds and then store it in the refrigerator. - Must try Papaya Recipes include Papite ka halwa or Papaya Halwa, Papaya Salad, Papaya Badam Barfi, & more. Did you know? - Papaya is actually a big berry.\n",
+        "category": "fruits",
+        "oldPrice": "38"
+    },
+    {
+        "id": 97,
+        "name": "Papaya Raw",
+        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VPAP12.png",
+        "qty": "1",
+        "metric": "pcs",
+        "currentPrice": "28",
+        "benefits": "No Details Available",
+        "info": "No Details Available",
+        "category": "fruits"
     }
 ]
