@@ -262,6 +262,5 @@ displaySlick(dryFruits,currentSlickDiv);
 kitchenStaples = products.filter( function (el) {
     return el.category == 'kitchen staples';
 });
-console.log('done');
 currentSlickDiv = document.querySelector('#kitchenStapleSection > .slick-content');
 displaySlick(kitchenStaples, currentSlickDiv);
