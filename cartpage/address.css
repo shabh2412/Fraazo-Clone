@@ -1,0 +1,32 @@
+#add_main{
+    display: flex;
+    border: 2px solid red;
+
+    justify-content: space-between;
+}
+#bill_data{
+    border: 2px solid red;
+}
+#change_add{
+    display: flex;
+    border: 2px solid red;
+
+}
+
+#add_box{
+    border: 2px solid red;
+    margin: 10px;
+}
+#add_box2{
+    display: flex;
+    border: 2px solid red;
+    width: fit-content;
+    justify-content:space-evenly ;
+    align-items: center;
+    gap: 10px;
+}
+#add_box3{
+    border: 2px solid red;
+    display: flex;
+    justify-content: space-evenly;
+}

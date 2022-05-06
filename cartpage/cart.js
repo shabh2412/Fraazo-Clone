@@ -5,12 +5,9 @@ displaydata(aman_cart_data)
 
 function displaydata(data){
     aman_cart_data.forEach(function(ele){
-        console.log(ele)
-
-
+        // console.log(ele)
         var cart_box=document.createElement("div")
         cart_box.setAttribute("class","cart_box")
-
 
         var prod_img=document.createElement("div")
         var prod_dis=document.createElement("div")
@@ -20,7 +17,8 @@ function displaydata(data){
         prod_count.style.display="flex"
 
         var prod_price=document.createElement("div")
-//cart image
+
+        //cart image
         var cart_img=document.createElement("img")
         cart_img.setAttribute("src",ele.image)
         cart_img.style.width="100px"
@@ -86,6 +84,7 @@ var total_price=0;
 var total_price=aman_cart_data.reduce(function(acc,ele){
     return acc+Number(ele.price);
 },0);
+
 if(total_price>0){
     var discount=0.1;
     //price saving 

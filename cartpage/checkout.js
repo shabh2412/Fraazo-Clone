@@ -9,6 +9,11 @@ var total_price=aman_cart_data.reduce(function(acc,ele){
     return acc+Number(ele.price);
 },0);
 
+total_bill_data()
+total_bill_data()
+function (){
+
+
 if(total_price>0){
 
     var discount=0.1;
@@ -167,12 +172,13 @@ box_address_text.addEventListener("click",function (){
 box2_payement.append(box_address_text)
 payment_box.append(box1_payement,box2_payement)
 
-
+localStorage.setItem("total_bill_data",JSON.stringify(payment_box))
 //append on scren 
 document.querySelector("#aman_bill_details").append(coupan_code_box,bill_details,total_item_price,hr1,cart_amaount,delivery_charge,hr2,total_pay,payment_box)
 
 }else{
     total_bill=0;
+}
 }
 
 function displaydata(data){
@@ -220,14 +226,17 @@ function displaydata(data){
         var btn2=document.createElement("button")
         var prod_h_count=document.createElement("div")
 
-        prod_h_count.innerText=ele.quantity;
+        prod_h_count.innerText=JSON.parse(localStorage.getItem("number_item"));
         div_count.append(prod_h_count)
 
         btn1.innerText="-"
         btn2.innerText="+"
 
         btn2.addEventListener("click",function(){
-            quantityfunc(count)
+            quantityincfunc(ele)
+        })
+        btn1.addEventListener("click",function(){
+            quantitydecfunc(ele)
         })
         btn1div.append(btn1)
         btn2div.append(btn2)
@@ -247,13 +256,12 @@ remove_cart.addEventListener("click",function (){
 // prod_price of price data
 
         var price_h4=document.createElement("h6")
-        price_h4.innerText= "₹"+ele.price;
+        price_h4.innerText= "₹"+ele.price*JSON.parse(localStorage.getItem("number_item"));
         prod_price.append(price_h4)
 
 //append data to localstorage to cart
         cart_box.append(prod_img,prod_dis,quantity,prod_count,prod_price,remove_cart)
         document.querySelector("#amancart_part").append(cart_box)
-
 
     })
 }
@@ -268,9 +276,18 @@ function delfun(ele,index){
 }
 
 // quantityfunc(count) 
-function quantityfunc(count){
+var count=1;
+function quantityincfunc(ele){
     count++;
+    console.log(count)
+    localStorage.setItem("number_item",JSON.stringify(count))
+    // window.location.reload()
+}
+function quantitydecfunc(ele){
+    count--;
+    localStorage.setItem("number_item",JSON.stringify(count))
     
+    // window.location.reload()
 }
 
 // function decfunc(ele){
