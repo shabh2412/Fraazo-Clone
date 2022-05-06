@@ -1,4 +1,4 @@
-[
+products = [
     {
         "id": 0,
         "name": "Alphonso Mango Devgad",
@@ -1129,3 +1129,5 @@
         "category": "fruits"
     }
 ]
+
+localStorage.setItem('products',JSON.stringify(products))
