@@ -61,10 +61,10 @@ nav > div:first-child {
     display: flex;
     /* border: 1px solid red; */
 }
-nav > div:first-child > * {
-    /* border: 1px solid teal; */
+/* nav > div:first-child > * {
+    border: 1px solid teal;
     
-}
+} */
 nav > div:last-child {
     flex-grow: 2;
     /* justify-content: space-evenly; */
