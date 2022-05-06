@@ -214,6 +214,9 @@ function displaySlick(data, slickDiv) {
             <p>ADD</p>
         `;
         btnDiv.append(btn);
+        btnDiv.addEventListener('click',function() {
+            addToCart(el);
+        })
 
         priceQtyBtn.append(priceQtyDiv,btnDiv);
 
@@ -228,6 +231,14 @@ function displaySlick(data, slickDiv) {
         slickDiv.append(card);
     });
     // console.log(slickDiv);
+}
+
+function addToCart(el) {
+    cart = JSON.parse(localStorage.getItem('cart')) || [];
+    alreadyAdded = false;
+    cart.forEach(function (el) {
+
+    });
 }
 
 function saveItem(el){
