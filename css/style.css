@@ -249,8 +249,19 @@ body > nav > div:nth-child(3) > div {
     gap: 10px;
 }
 
+.btn.btn-outline-cart.rounded-pill.text-uppercase.px-3.py-1.d-flex.align-items-center:hover > * {
+    transition: all .5s ease-in;
+    color: white;
+}
+.btn.btn-outline-cart.rounded-pill.text-uppercase.px-3.py-1.d-flex.align-items-center:hover {
+    background-position: left bottom;
+}
 .btn.btn-outline-cart.rounded-pill.text-uppercase.px-3.py-1.d-flex.align-items-center {
     justify-content: space-evenly;
+    background: linear-gradient(to right, #4fbc90 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
 }
 
 
