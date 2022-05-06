@@ -42,6 +42,7 @@ var sampleData = [
 localStorage.setItem("aman_productsdata",JSON.stringify(sampleData));
 
 display(JSON.parse(localStorage.getItem("aman_productsdata")))
+
 function display(data){
 
     data.forEach(function(ele){
@@ -73,8 +74,6 @@ function display(data){
         document.querySelector("#item").append(card)
     })
 }
-
-
 var aman_cart_data=JSON.parse(localStorage.getItem("cart_data"))  || []
 function  addcarfun(ele){
     aman_cart_data.push(ele)

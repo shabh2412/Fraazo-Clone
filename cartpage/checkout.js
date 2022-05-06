@@ -1,21 +1,42 @@
 var aman_cart_data=JSON.parse(localStorage.getItem("cart_data"))
 console.log(aman_cart_data)
-
 displaydata(aman_cart_data)
 
 var total_bill=JSON.parse(localStorage.getItem("totalcart_coast")) || 0
-var total_price=0;
+var total_price;
+
 var total_price=aman_cart_data.reduce(function(acc,ele){
     return acc+Number(ele.price);
 },0);
 
-total_bill_data()
-total_bill_data()
-function (){
+// total_bill_data()
+// total_bill_data()
+//checkcode() function  
+var cupon_code=[{code1:"AMAN10"}]
+function checkcode(){
+    var enter_cup_code=document.createElement("input")
+    var inpt_submit=document.createElement("submit")
+    inpt_submit.innerText="Applly code";
+    inpt_submit.style.cursor="pointer"
+    inpt_submit.addEventListener("click",function(){
+        if(enter_cup_code.value=="AMAN10"){
+            alert("applied succefully")
+        }else{
+            alert("Wrong Code Applied")
+        }
+    })
+    console.log(enter_cup_code.value)
+
+    
+
+    enter_cup_code.placeholder="Enter coupon";
+    document.querySelector("#aman_bill_details").append(enter_cup_code,inpt_submit)
+    
+
+}
 
 
 if(total_price>0){
-
     var discount=0.1;
     //price saving 
     var pricesaving=Math.floor(total_price*discount);
@@ -60,6 +81,11 @@ dis_logo.append(dis_logo_img)
 
 //add code data Apply Coupon/Referral
 var coupan_code_text_box=document.createElement("div")
+coupan_code_text_box.style.cursor="pointer"
+
+coupan_code_text_box.addEventListener("click",function(){
+    checkcode()
+})
 var coupan_code_text=document.createElement("p")
 coupan_code_text.innerText="Apply Coupon/Referral";
 coupan_code_text_box.append(coupan_code_text);
@@ -167,7 +193,7 @@ var box_address_text=document.createElement("h6")
 box_address_text.innerText="SELECT ADDRESS";
 box_address_text.style.cursor="pointer"
 box_address_text.addEventListener("click",function (){
-    addrespage()
+    window.location.href="address.html"
 })
 box2_payement.append(box_address_text)
 payment_box.append(box1_payement,box2_payement)
@@ -176,9 +202,10 @@ localStorage.setItem("total_bill_data",JSON.stringify(payment_box))
 //append on scren 
 document.querySelector("#aman_bill_details").append(coupan_code_box,bill_details,total_item_price,hr1,cart_amaount,delivery_charge,hr2,total_pay,payment_box)
 
-}else{
-    total_bill=0;
 }
+else{
+    total_bill=0;
+
 }
 
 function displaydata(data){
@@ -226,17 +253,17 @@ function displaydata(data){
         var btn2=document.createElement("button")
         var prod_h_count=document.createElement("div")
 
-        prod_h_count.innerText=JSON.parse(localStorage.getItem("number_item"));
+        prod_h_count.innerText=JSON.parse(localStorage.getItem("no_of_Min_quan"));
         div_count.append(prod_h_count)
 
         btn1.innerText="-"
         btn2.innerText="+"
 
         btn2.addEventListener("click",function(){
-            quantityincfunc(ele)
+            
         })
         btn1.addEventListener("click",function(){
-            quantitydecfunc(ele)
+            
         })
         btn1div.append(btn1)
         btn2div.append(btn2)
@@ -256,7 +283,7 @@ remove_cart.addEventListener("click",function (){
 // prod_price of price data
 
         var price_h4=document.createElement("h6")
-        price_h4.innerText= "₹"+ele.price*JSON.parse(localStorage.getItem("number_item"));
+        price_h4.innerText= "₹"+ele.price;
         prod_price.append(price_h4)
 
 //append data to localstorage to cart
