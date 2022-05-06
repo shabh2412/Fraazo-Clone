@@ -159,7 +159,7 @@ var bestDeals = [
     }
 ]
 
-function displaySlick(data) {
+function displaySlick(data, slickDiv) {
     slickDiv.innerHTML = null;
     data.forEach(el => {
         // console.log(el);
@@ -226,10 +226,10 @@ function displaySlick(data) {
     // console.log(slickDiv);
 }
 
-var slickDiv = document.querySelector('#bestDeals > .slick-content');
+var currentSlickDiv = document.querySelector('#bestDeals > .slick-content');
 // console.log(slickDiv);
 
-displaySlick(bestDeals);
+displaySlick(bestDeals, currentSlickDiv);
 
 
 products = JSON.parse(localStorage.getItem('products')) || [];
@@ -238,29 +238,30 @@ products = JSON.parse(localStorage.getItem('products')) || [];
 fruits = products.filter(function (el) {
     return el.category == "fruits";
 })
-slickDiv = document.querySelector('#fruitSection > .slick-content');
-displaySlick(fruits);
+currentSlickDiv = document.querySelector('#fruitSection > .slick-content');
+displaySlick(fruits, currentSlickDiv);
 
 vegetables = products.filter( function (el) {
     return el.category == 'vegetables';
 });
-slickDiv = document.querySelector('#vegetableSection > .slick-content');
-displaySlick(vegetables);
+currentSlickDiv = document.querySelector('#vegetableSection > .slick-content');
+displaySlick(vegetables, currentSlickDiv);
 
 herbs = products.filter( function (el) {
     return el.category == 'herbs';
 });
-slickDiv = document.querySelector('#herbSection > .slick-content');
-displaySlick(herbs);
+currentSlickDiv = document.querySelector('#herbSection > .slick-content');
+displaySlick(herbs, currentSlickDiv);
 
 dryFruits = products.filter( function (el) {
     return el.category == 'dry fruits';
 });
-slickDiv = document.querySelector('#dryFruitSection > .slick-content');
-displaySlick(dryFruits);
+currentSlickDiv = document.querySelector('#dryFruitSection > .slick-content');
+displaySlick(dryFruits,currentSlickDiv);
 
 kitchenStaples = products.filter( function (el) {
     return el.category == 'kitchen staples';
 });
-slickDiv = document.querySelector('#kitchenStapleSection > .slick-content');
-displaySlick(kitchenStaples);
+console.log('done');
+currentSlickDiv = document.querySelector('#kitchenStapleSection > .slick-content');
+displaySlick(kitchenStaples, currentSlickDiv);
