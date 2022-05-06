@@ -220,10 +220,18 @@ function displaySlick(data, slickDiv) {
         cardBody.append(productName,priceQtyBtn);
 
         card.append(img,cardBody);
+
+        card.addEventListener('click',function(){
+            saveItem(el);
+        })
         // console.log(card);
         slickDiv.append(card);
     });
     // console.log(slickDiv);
+}
+
+function saveItem(el){
+    localStorage.setItem('currentItem',JSON.stringify(el));
 }
 
 var currentSlickDiv = document.querySelector('#bestDeals > .slick-content');
