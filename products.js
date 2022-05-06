@@ -24,7 +24,7 @@
  var name=document.createElement("h4");
  name.innerText=sampleData.name;
 
- var qty=document.createElement("p");
+ var qty=document.createElement("div");
  qty.innerText=sampleData.quantity+" pcs";
 
  var sym=document.createElement("div");

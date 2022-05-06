@@ -1,6 +1,6 @@
 #main{
     width: 93%;
-    height: 420px;
+    height: 470px;
     margin: auto;
     margin-top: 70px;
     display: flex;
@@ -30,7 +30,7 @@
 
 #fs{
     height: 40%;
-    margin-bottom: 0px;
+   
     padding-left: 10px;
   
     color: gray;
@@ -48,6 +48,7 @@
 
 #comb{
 display: flex;
+margin-top: 20px;
     }
  #comb>div{
      margin-left: 10px;
@@ -118,5 +119,6 @@ h4{
     margin-left: -40px;
     font-size: 20px;
 }
+
 
 
