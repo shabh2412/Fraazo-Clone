@@ -21,17 +21,23 @@ function displaySlick(data, slickDiv) {
 
         img.src = el.image;
         img.alt = el.name;
-
+        img.addEventListener('click',function(){
+            saveItem(el);
+        })
+        
         cardBody = document.createElement('div');
         cardBody.className = 'card-body bg-white';
         
         productName = document.createElement('p');
         productName.innerText = el.name;
         productName.className = 'productName fs-14';
-
+        productName.addEventListener('click',function(){
+            saveItem(el);
+        })
+        
         priceQtyBtn = document.createElement('div');
         priceQtyBtn.className = 'price-qty-btn d-flex justify-content-between align-items-center';
-
+        
         priceQtyDiv = document.createElement('div');
         priceQtyDiv.className = 'price-qty';
         qty = document.createElement('p');
@@ -45,7 +51,7 @@ function displaySlick(data, slickDiv) {
             units.innerText = " " + el.metric;
         }
         qty.append(units);
-
+        
         priceDiv = document.createElement('div');
         priceDiv.className = 'price fw-500';
         price = document.createElement('p');
@@ -59,9 +65,12 @@ function displaySlick(data, slickDiv) {
             oldPrice.innerText = "₹"+el.oldPrice;
             priceDiv.append(oldPrice);
         }
-
-
+        
+        
         priceQtyDiv.append(qty,priceDiv);
+        priceQtyDiv.addEventListener('click',function(){
+            saveItem(el);
+        })
         btnDiv = document.createElement('div');
         btnDiv.className = 'addToCartButton';
         
@@ -82,9 +91,6 @@ function displaySlick(data, slickDiv) {
 
         card.append(img,cardBody);
 
-        card.addEventListener('click',function(){
-            saveItem(el);
-        })
         // console.log(card);
         slickDiv.append(card);
     });
@@ -94,12 +100,21 @@ function displaySlick(data, slickDiv) {
 function addToCart(el) {
     cart = JSON.parse(localStorage.getItem('cart')) || [];
     alreadyAdded = false;
-    cart.forEach(function (elem) {
-        if(elem.id==el.id) alreadyAdded = true;
+    index = undefined;
+    cart.forEach(function (elem,ind) {
+        if(elem.id==el.id) {
+            alreadyAdded = true;
+            index = ind;
+        }
     });
-    if(!alreadyAdded) {
-
+    if(alreadyAdded) {
+        cart[index].count++;
     }
+    else {
+        el.count = 1;
+        cart.push(el);
+    }
+    localStorage.setItem('cart',JSON.stringify(cart));
 }
 
 function saveItem(el){
