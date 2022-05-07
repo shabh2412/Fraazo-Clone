@@ -1,31 +1,31 @@
- var sampleData = 
+//  var sampleData = 
    
-     {
-         name : "Alphonso Mango Devgad",
-         image : "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/329/original/data?1616795305",
-         quantity : 6,
-         price : 449,
-         stprice : 455,
-         benefits:"- Devgad Alphanso mangoes are naturally grown in the Devgad district of Maharashtra region of India. - Devgad Alphonso has a stronger and thicker coat. Hence, they’re less prone to getting wrinkles. - 'Alphonso' originated from a Portuguese general’s name 'Afonso de Albuquerque'. - Alphonso mango is a very costly variety of fruit in the world also know for best in taste and aroma fruit.",
-         info:"- Alphanso mango also very healthy highly contains vitamins like Vitamin E, Vitamin A, Carotene and minerals like Magnesium, Manganese, Phosphorus. - Did you know it helps to regulating cholestrol levels in body and digestion process by adding mango in your diet during summer season. It can be used in dried form as well and used as part of salads. - It is also season best fruit to increases eye sight, prevents night blindness and dry eyes health issues."
-     }
+//      {
+//          name : "Alphonso Mango Devgad",
+//          image : "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/329/original/data?1616795305",
+//          quantity : 6,
+//          price : 449,
+//          stprice : 455,
+//          benefits:"- Devgad Alphanso mangoes are naturally grown in the Devgad district of Maharashtra region of India. - Devgad Alphonso has a stronger and thicker coat. Hence, they’re less prone to getting wrinkles. - 'Alphonso' originated from a Portuguese general’s name 'Afonso de Albuquerque'. - Alphonso mango is a very costly variety of fruit in the world also know for best in taste and aroma fruit.",
+//          info:"- Alphanso mango also very healthy highly contains vitamins like Vitamin E, Vitamin A, Carotene and minerals like Magnesium, Manganese, Phosphorus. - Did you know it helps to regulating cholestrol levels in body and digestion process by adding mango in your diet during summer season. It can be used in dried form as well and used as part of salads. - It is also season best fruit to increases eye sight, prevents night blindness and dry eyes health issues."
+//      }
    
    
 
 
 
+var currentItem=JSON.parse(localStorage.getItem("currentItem"));
 
-
- displayData(sampleData)
-   function displayData(sampleData){
+ displayData(currentItem)
+   function displayData(currentItem){
      var pic=document.createElement("img")
-     pic.setAttribute("src",sampleData.image);
+     pic.setAttribute("src",currentItem.image);
 
  var name=document.createElement("h4");
- name.innerText=sampleData.name;
+ name.innerText=currentItem.name;
 
  var qty=document.createElement("div");
- qty.innerText=sampleData.quantity+" pcs";
+ qty.innerText=currentItem.qty+ currentItem.metric;
 
  var sym=document.createElement("div");
  sym.setAttribute("id","sym")
@@ -36,10 +36,10 @@
  combo.append(qty,sym);
 
  var price=document.createElement("p");
- price.innerText="₹"+sampleData.price;
+ price.innerText="₹"+currentItem.currentPrice;
 
  var stprice=document.createElement("p");
- stprice.innerText="₹"+sampleData.stprice;
+ stprice.innerText="₹"+currentItem.oldPrice;
 
  var btn=document.createElement("button");
  btn.innerHTML="<i class='fa-solid fa-cart-plus'></i><span> ADD</span>";
@@ -86,7 +86,7 @@ var second=document.querySelector("#second").append(fs,sc,th);
   }
   function dscFunction()
   {
-    th.innerText=sampleData.name;
+    th.innerText=currentItem.name;
     document.querySelector("#ds").style.color="black";
     document.querySelector("#bn").style.color="grey";
     document.querySelector("#inf").style.color="grey";
@@ -99,7 +99,7 @@ var second=document.querySelector("#second").append(fs,sc,th);
   function benFunction()
   {
     
-    th.innerText=sampleData.benefits;
+    th.innerText=currentItem.benefits;
     document.querySelector("#ds").style.color="grey";
     document.querySelector("#bn").style.color="black";
     document.querySelector("#inf").style.color="grey";
@@ -110,7 +110,7 @@ var second=document.querySelector("#second").append(fs,sc,th);
 
   function infoFunction()
   {
-    th.innerText=sampleData.info;
+    th.innerText=currentItem.info;
     document.querySelector("#ds").style.color="grey";
     document.querySelector("#bn").style.color="grey";
     document.querySelector("#inf").style.color="black";
