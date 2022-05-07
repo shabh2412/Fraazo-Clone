@@ -267,7 +267,11 @@ else{
     var br=document.createElement("br")
 
     var cart_em_box_letsshopping=document.createElement("div")
+    
     var cart_em_box_letsshopping_button=document.createElement("button")
+    cart_em_box_letsshopping_button.addEventListener("click",function(){
+        window.location.href="index.html"
+    })
     cart_em_box_letsshopping_button.innerText="Let's Shop!"
     cart_em_box_letsshopping_button.style.fontWeight="bold"
     cart_em_box_letsshopping.append(cart_em_box_letsshopping_button)
@@ -285,7 +289,6 @@ else{
 
 function gotofunc(){
 //    window.location.href="index.html"
-
 }
 function delfun(ele,index){
     aman_cart_data.splice(index,1)

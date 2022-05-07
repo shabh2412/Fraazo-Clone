@@ -62,5 +62,15 @@ font-size: 30px;
     justify-content: space-evenly;
     margin: auto;
 }
+#em{
+    /* border: 2px solid red; */
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+#em>div>div{
+    /* border: 2px solid red; */
+    width: 80%;
+    margin: auto;
 
-
+}

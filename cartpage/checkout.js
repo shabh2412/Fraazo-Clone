@@ -49,6 +49,42 @@ if(total_price>0){
     // bill data 
 
    // bill data dispaly 
+
+
+
+//    <div>
+//    <div ><img  src="https://cdn-icons-png.flaticon.com/512/34/34568.png" alt="img">----------</div>
+//    <div ><img  src="" alt="img"></div>
+//    <div ><img  src="" alt="img"></div>
+//    <div ><img  src="" alt="img"></div>
+// </div>
+var img_status_box=document.createElement("div")
+img_status_box.style.backgroundColor=" rgb(211, 255, 246)";
+img_status_box.style.height="100px"
+img_status_box.style.display="flex";
+var img1_box=document.createElement("div")
+var img1=document.createElement("img")
+img1.setAttribute("src","")
+img1_box.append(img1)
+var img2_box=document.createElement("div")
+var img2=document.createElement("img")
+img1.setAttribute("src","")
+img1_box.append(img1)
+
+var img3_box=document.createElement("div")
+var img3=document.createElement("img")
+img1.setAttribute("src","")
+img1_box.append(img1)
+
+var img4_box=document.createElement("div")
+var img4=document.createElement("img")
+img1.setAttribute("src","")
+img1_box.append(img1)
+
+img_status_box.append(img1_box,img2_box,img3_box,img3_box,img4_box)
+document.querySelector("#cart_status").append(img_status_box)
+
+
 var coupan_code_box=document.createElement("div")
 var bill_details=document.createElement("div")
 var total_item_price=document.createElement("div")
@@ -67,7 +103,7 @@ total_pay.setAttribute("class","price_box")
 
 var payment_box=document.createElement("div")
 payment_box.setAttribute("class","price_box")
-payment_box.style.border="2px solid red"
+// payment_box.style.border="2px solid red"
 
 
 // coupan_code_box
@@ -132,7 +168,6 @@ total_item_cal_price.append(total_item_cal_price_text)
 
 total_item_price.append(total_item_price_box,total_item_cal_price);
 
-
 //line break;
 var hr1=document.createElement("hr")
 
@@ -161,7 +196,6 @@ del_char_box2.append(del_char_box2_text)
 delivery_charge.append(del_char_box1,del_char_box2)
 
 var hr2=document.createElement("hr")
-
 
 // total pay
 
@@ -206,7 +240,66 @@ document.querySelector("#aman_bill_details").append(coupan_code_box,bill_details
 else{
     total_bill=0;
 
+
+    document.querySelector("#aman_cart_section").remove("#aman_cart_status")
+
+    var empty_main_box=document.createElement("div")
+
+    var em_box=document.createElement("div")
+
+    var em_img=document.createElement("div")
+    var img_box=document.createElement("img")
+    img_box.setAttribute("src","https://fraazo.com/static/empty-cart-1468d71b9bd1d91401f28d1734cae373.svg")
+    em_img.append(img_box)
+    img_box.style.width="350px"
+
+    var txt_box=document.createElement("div")
+    var txt=document.createElement("h3")
+    txt.innerText="Your Cart is Empty"
+    txt_box.append(txt)
+
+    var txt_box2=document.createElement("div")
+    var txt2=document.createElement("p")
+    txt2.innerText="Let's Add Some Items!"
+    txt_box2.append(txt2)
+
+    var letshoping=document.createElement("div")
+    // letshoping.style.border="2px solid"
+    var letshoping_inner_box=document.createElement("div")
+    // letshoping_inner_box.style.border="2px solid";
+    letshoping_inner_box.style.width="30%"
+    letshoping_inner_box.style.cursor="pointer"
+    letshoping_inner_box.addEventListener("click",function(){
+        window.location.href="index.html"
+    })
+    letshoping_inner_box.style.height="60px"
+    letshoping_inner_box.style.margin="auto"
+    letshoping_inner_box.style.borderRadius="10px"
+    letshoping_inner_box.style.display="flex"
+    letshoping_inner_box.style.justifyContent="center"
+    letshoping_inner_box.style.alignItems="center"
+    letshoping_inner_box.style.backgroundColor="aqua"
+
+    var letshoping_txt=document.createElement("p")
+    letshoping_txt.innerText="START SHOPPING";
+    letshoping_txt.style.fontWeight="bolder"
+    letshoping_txt.style.color="white"
+
+    letshoping_inner_box.append(letshoping_txt)
+    letshoping.append(letshoping_inner_box)
+    
+
+    em_box.append(em_img,txt_box,txt_box2,letshoping)
+    empty_main_box.append(em_box)
+
+    document.querySelector("#em").append(empty_main_box)
+
+
+
 }
+
+
+
 
 function displaydata(data){
     aman_cart_data.forEach(function(ele){
