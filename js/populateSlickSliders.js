@@ -2,10 +2,12 @@ var bestDeals = [];
 
 var products = JSON.parse(localStorage.getItem('products')) || [];
 
-for (let i = 0; i < 20; i++) {
-    index = Math.floor((Math.random() * 19) + 1);
-    bestDeals.push(products[index]);
-}
+const shuffled = products.sort(()=> 0.5 - Math.random());
+bestDeals = shuffled.slice(0,20);
+// for (let i = 0; i < 20; i++) {
+//     index = Math.floor((Math.random() * 19) + 1);
+//     bestDeals.push(products[index]);
+// }
 
 function displaySlick(data, slickDiv) {
     slickDiv.innerHTML = null;
