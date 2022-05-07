@@ -17,18 +17,19 @@ body {font-family: Arial, Helvetica, sans-serif;}
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(250, 241, 241); /* Fallback color */
-  background-color: rgba(236, 225, 225, 0.4); /* Black w/ opacity */
+  background-color: rgba(240, 240, 240, 0.4); /* Black w/ opacity */
 }
 
 /* Modal Content */
 .modal-content {
-  position: relative;
+  position: absolute;
+  text-align: center;
   background-color: #fefefe;
-  margin: auto;
+  margin: 100px;
   padding: 0;
-  border: 1px solid #888;
-  width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(216, 213, 213, 0.2),0 6px 20px 0 rgba(218, 211, 211, 0.19);
+  
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(243, 239, 239, 0.959),0 6px 20px 0 rgba(255, 254, 254, 0.938);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
@@ -62,9 +63,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 .modal-header {
-  padding: 2px 16px;
-  background-color: #000000;
-  color: white;
+  padding: 2px 12px;
+  background-color: #f8f0f0;
+  color: rgb(14, 1, 1);
 }
 
 .modal-body {padding: 2px 16px;}
@@ -296,21 +297,21 @@ input {
           <h1 style="padding-top: 15px"> Create Account</h1>
           <input type="text" name="fname" placeholder="First Name">
           <input type="text" name="lname" placeholder="Last Name">
-          <input type="text" name="address" placeholder="Address">
+          <!--  <input type="text" name="address" placeholder="Address">   -->
           <input type="password" name="password" placeholder="Password">
           <input type="text" name="phone" placeholder="Phone Number">
-          <input type="number" name="age" placeholder="Age">
+          <!--<input type="number" name="age" placeholder="Age">  -->
           <button style="margin-top:10px"> Create Account</button>
-          <h5>Already have an account! <a class="ghost" id="signIn" style="color:blue;"><u>Sign In</u></a></h5>
+          <h5>Already have an account! <a class="ghost" id="signIn" style="color:blue;"><u>Sign In</u></a></h5>  
       </form>
   </div>
   <div class="form-container sign-in-container">
       <form action="#">
           <h1 style="padding-bottom: 15px"> Login Now</h1>
-          <input type="email" name="email" placeholder="Email">
+          <input type="number" name="Phone Number" placeholder="Phone Number">
           <input type="password" name="password" placeholder="Password">
           <a href="#" style="padding-left:150px; font-weight: bold"> Forgot Your Password?</a>
-          <button style="margin-top: 10px"> Sign In...</button>
+          <button  style="margin-top: 10px"> Sign In...</button>
           <h5>New to here! <a class="ghost" id="signUp" style="color:blue;"><u>Sign Up</u></a></h5>
       </form>
       
@@ -370,7 +371,12 @@ const signUpButton = document.getElementById('signUp');
     signInButton.addEventListener('click', () => {
         container.classList.remove("right-panel-active");
     });
+
+
+   
 </script>
+
 
 </body>
 </html>
+   

@@ -5,7 +5,7 @@ document.querySelector("#form").addEventListener("submit", addItem);
     var name = document.querySelector("#name").value;
     var unit = document.querySelector("#name").value;
     var price = document.querySelector("#price").value;
-
+    
     var image = document.querySelector("#img").value;
 
     var prodObj = {
