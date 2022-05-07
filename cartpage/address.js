@@ -1,18 +1,38 @@
-var address_data= []
 
-localStorage.setItem("address",JSON.stringify(address_data))
-document.querySelector("#bill_data").append()
-
+// localStorage.setItem("address",JSON.stringify(address))
+// document.querySelector("#bill_data").append()
 //add addres icon
-addresicon()
-function add_new_address(){
-   var flat_box=documen.createElement("div")
-   var flat_box_input=document.createElement("input")
-//    var 
+// var address=JSON.parse(localStorage.getItem("del_address")) || [];
 
-}
+var address= JSON.parse(localStorage.getItem("address")) || [];
+// document.querySelector("#sub").addEventListener("click",function(){
+//     event.preventDefault()
+//     var add_obj={
+//     name:document.querySelector("#inputEmail4").value,
+//     mobile:document.querySelector("#inputPassword4").value,
+//     address:document.querySelector("#inputAddress").value,
+//     address2:document.querySelector("#inputAddress2").value,
+//     city:document.querySelector("#inputAddress2").value,
+//     state:document.querySelector("#inputstate").value,
+//     zip:document.querySelector("#inputZip").value,
+// }
+// console.log(add_obj)
+// address.push(add_obj)
+// localStorage.setItem("address",JSON.stringify(address))
+// })
+
+
+// if(address!=null){
+//     var form_remov=document.querySelector("#form");
+//     // form_remov.remove();
+    
+// }
+
+addresicon()
+// if(address==null){
 function addresicon(){
     var add_icon_box=document.createElement("div");
+    add_icon_box.setAttribute("id","add_new_add")
     add_icon_box.style.cursor="pointer";
     add_icon_box.addEventListener("click",function(){
         add_new_address()
@@ -37,18 +57,146 @@ function addresicon(){
     add_icon_box.append(loc_img_box,loc_text_box)
     document.querySelector("#address").append(add_icon_box)
 }
-var total_bill_data=JSON.parse(localStorage.getItem("total_bill_data"))
-console.log(total_bill_data)
 
-/// collecting address form 
+function add_new_address(){
+    // var address1=window.prompt("Enter delivery Address:")
+    // var obj={};
+    // address.push(obj)
+    // localStorage.setItem("del_address",JSON.stringify(address));
+
+    
+}
 
 
-// biii data
+console.log(address)
+// display data addres
+display_add(address[0])
+function display_add(data){
+    console.log(data.name)
+    var add_box=document.createElement("div")
+    var name=document.createElement("p")
+    name.innerText=data.name
+    var  mobile=document.createElement("p")
+    mobile.innerText=data.mobile
+    var  add1=document.createElement("p")
+    add1.innerText=data.address
+    var  add2=document.createElement("p")
+    add2.innerText=data.address2;
+    var  city=document.createElement("p")
+    city.innerText=data.city;
+    var  state=document.createElement("p")
+    state.innerText=data.state;
+    var  zip=document.createElement("p")
+    zip.innerText=data.zip;
+    
+    add_box.append(name,mobile,add1,add2,city,state,zip)
+    document.querySelector("#display_add").append(add_box)
+}
+
+var total_price=JSON.parse(localStorage.getItem("total_price"))
+
+if(total_price>0){
+    var discount=0.1;
+    //price saving 
+    var pricesaving=Math.floor(total_price*discount);
+    //delivery charge
+    var del_cahrge=30;
+    //total_bill
+    var total_bill=del_cahrge+total_price-pricesaving;
+    // bill data 
+
+   // bill data dispaly
+
+//    <div>
+//    <div ><img  src="https://cdn-icons-png.flaticon.com/512/34/34568.png" alt="img">----------</div>
+//    <div ><img  src="" alt="img"></div>
+//    <div ><img  src="" alt="img"></div>
+//    <div ><img  src="" alt="img"></div>
+// </div>
+var img_status_box=document.createElement("div")
+img_status_box.style.backgroundColor=" rgb(211, 255, 246)";
+img_status_box.style.height="100px"
+img_status_box.style.display="flex";
+var img1_box=document.createElement("div")
+var img1=document.createElement("img")
+img1.setAttribute("src","")
+img1_box.append(img1)
+var img2_box=document.createElement("div")
+var img2=document.createElement("img")
+img1.setAttribute("src","")
+img1_box.append(img1)
+
+var img3_box=document.createElement("div")
+var img3=document.createElement("img")
+img1.setAttribute("src","")
+img1_box.append(img1)
+
+var img4_box=document.createElement("div")
+var img4=document.createElement("img")
+img1.setAttribute("src","")
+img1_box.append(img1)
+
+img_status_box.append(img1_box,img2_box,img3_box,img3_box,img4_box)
+document.querySelector("#cart_status").append(img_status_box)
+
+
+var coupan_code_box=document.createElement("div")
+var bill_details=document.createElement("div")
+var total_item_price=document.createElement("div")
+total_item_price.setAttribute("class","price_box")
+
+var price_saving=document.createElement("div")
+price_saving.setAttribute("class","price_box")
+
+var cart_amaount=document.createElement("div")
+cart_amaount.setAttribute("class","price_box")
+
+var delivery_charge=document.createElement("div")
+delivery_charge.setAttribute("class","price_box")
+var total_pay=document.createElement("div")
+total_pay.setAttribute("class","price_box")
+
+var payment_box=document.createElement("div")
+payment_box.setAttribute("class","price_box")
+// payment_box.style.border="2px solid red"
+
+
+// coupan_code_box
+var cuopuan_applied=document.createElement("div")
+cuopuan_applied.setAttribute("id","cuopuan_applied")
+var dis_logo=document.createElement("div")
+var dis_logo_img=document.createElement("img")
+dis_logo_img.style.width="30px"
+dis_logo_img.setAttribute("src","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTohkmWAV7uayiY53-4TcYfYSOeMMMiGkzghg&usqp=CAU")
+dis_logo.append(dis_logo_img)
+
+//add code data Apply Coupon/Referral
+var coupan_code_text_box=document.createElement("div")
+coupan_code_text_box.style.cursor="pointer"
+
+coupan_code_text_box.addEventListener("click",function(){
+    checkcode()
+})
+var coupan_code_text=document.createElement("p")
+coupan_code_text.innerText="Apply Coupon/Referral";
+coupan_code_text_box.append(coupan_code_text);
+
+// add to > on 
+var arrow_box=document.createElement("div")
+var arrow_text_box=document.createElement("h5")
+arrow_text_box.innerText=">"
+arrow_box.append(arrow_text_box)
+
+cuopuan_applied.append(dis_logo,coupan_code_text_box,arrow_box)
+coupan_code_box.append(cuopuan_applied)
+
+// bill_details
 var bill_text=document.createElement("h4")
 bill_text.innerText="Bill Details";
 bill_details.append(bill_text)
 
 //total price:
+
 var total_item_price_box=document.createElement("div")
 var total_item_cal_price=document.createElement("div")
 
@@ -128,7 +276,21 @@ var box1_1_text=document.createElement("p")
 var box1_2_text=document.createElement("p")
 box1_1_text.innerText="Total"
 box1_2_text.innerText=total_bill;
-box1_payement.append(box1_1_text,box1_2_text);
+box1_payement.append(box1_1_text,box1_2_text)
 
-document.querySelector("").append()
+// var box_address=document.createElement("div")
+var box_address_text=document.createElement("h6")
+box_address_text.innerText="SELECT ADDRESS";
+box_address_text.style.cursor="pointer"
+box_address_text.addEventListener("click",function (){
+    window.location.href="address.html"
+})
+box2_payement.append(box_address_text)
+payment_box.append(box1_payement,box2_payement)
+
+localStorage.setItem("total_bill_data",JSON.stringify(payment_box))
+//append on scren 
+document.querySelector("#bill_data").append(bill_details,total_item_price,hr1,cart_amaount,delivery_charge,hr2,total_pay,payment_box)
+
+}
 

@@ -8,6 +8,7 @@ var total_price;
 var total_price=aman_cart_data.reduce(function(acc,ele){
     return acc+Number(ele.price);
 },0);
+localStorage.setItem("total_price",JSON.stringify(total_price))
 
 // total_bill_data()
 // total_bill_data()
@@ -141,6 +142,7 @@ bill_text.innerText="Bill Details";
 bill_details.append(bill_text)
 
 //total price:
+
 var total_item_price_box=document.createElement("div")
 var total_item_cal_price=document.createElement("div")
 
@@ -237,11 +239,13 @@ localStorage.setItem("total_bill_data",JSON.stringify(payment_box))
 document.querySelector("#aman_bill_details").append(coupan_code_box,bill_details,total_item_price,hr1,cart_amaount,delivery_charge,hr2,total_pay,payment_box)
 
 }
+
+
 else{
     total_bill=0;
 
 
-    document.querySelector("#aman_cart_section").remove("#aman_cart_status")
+    // document.querySelector("#aman_cart_section").remove("#aman_cart_status")
 
     var empty_main_box=document.createElement("div")
 

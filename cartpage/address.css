@@ -6,6 +6,8 @@
 }
 #bill_data{
     border: 2px solid red;
+    /* display: flex; */
+    
 }
 #change_add{
     display: flex;
@@ -26,7 +28,25 @@
     gap: 10px;
 }
 #add_box3{
+    width: 90%;
+    margin: 10px;
     border: 2px solid red;
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
 }
+#address{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    color: white;
+}
+#address>div{
+    color: aqua;
+    font-weight: bolder;
+    width:100%;
+    border: 2px solid red;
+}
+
+
