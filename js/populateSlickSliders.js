@@ -104,6 +104,7 @@ function addToCart(el) {
 
 function saveItem(el){
     localStorage.setItem('currentItem',JSON.stringify(el));
+    window.location.href="products.html";
 }
 
 var currentSlickDiv = document.querySelector('#bestDeals > .slick-content');
