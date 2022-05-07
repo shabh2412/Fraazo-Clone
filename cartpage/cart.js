@@ -1,7 +1,23 @@
+
+const setProducts =(name) =>{
+    const element= document.query("#cart_box");
+    var data=JSON.parse(localStorage.getItem(name))
+    if(data=null){
+        
+    }
+
+}
+// {/* <div class="sem"><img src="${" alt=""></div> */}
+
+
+
+
 var aman_cart_data=JSON.parse(localStorage.getItem("cart_data")) 
 console.log(aman_cart_data)
 var min_quantity=1;
 localStorage.setItem("no_of_Min_quan",JSON.stringify(min_quantity))
+
+
 displaydata(aman_cart_data)
 
 function displaydata(data){
