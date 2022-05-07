@@ -1,163 +1,13 @@
-var bestDeals = [
-    {
-        "name": "Alphonso Mango Devgad",
-        "image": "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/329/original/data?1616795305",
-        "qty": "6 pcs",
-        "currentPrice": "449",
-        "oldPrice": "600"
-    },
-    {
-        "name": "Coconut Tender / Nariyal Pani",
-        "image": "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/257/original/data?1612448669",
-        "qty": "1 Pc",
-        "currentPrice": "39",
-        "oldPrice": "49"
-    },
-    {
-        "name": "Tomato (1 Kg)",
-        "image": "https://s3.ap-south-1.amazonaws.com/fraazo-prod/images/images/000/006/605/original/data?1649242645",
-        "qty": "1 kg",
-        "currentPrice": "42",
-        "oldPrice": "45"
-    },
-    {
-        "name": "Cabbage",
-        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VCAB12.png",
-        "qty": "1 pc",
-        "currentPrice": "9"
-    },
-    {
-        "name": "Onion",
-        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/BONI11.png",
-        "qty": "1 kg",
-        "currentPrice": "16",
-        "oldPrice": "20"
-    },
-    {
-        "name": "Bottle Gourd (Dudhi / Lauki)",
-        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VBOT12.png",
-        "qty": "1 pc",
-        "currentPrice": "9",
-        "oldPrice": "12"
-    },
-    {
-        "name": "Carrot Orange (Local)",
-        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/FCAR1.png",
-        "qty": "500 g",
-        "currentPrice": "22",
-        "oldPrice": "28"
-    },
-    {
-        "name": "Capsicum (Shimla), Green Shimla Mirchi",
-        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VCAP12.png",
-        "qty": "250 g",
-        "currentPrice": "11",
-        "oldPrice": "13"
-    },
-    {
-        "name": "Potato / Batata",
-        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/BPOT11.png",
-        "qty": "1 kg",
-        "currentPrice": "27",
-        "oldPrice": "29"
-    },
-    {
-        "name": "Garlic Bunch / Lahsun / Vellulipaya",
-        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VGAR12.png",
-        "qty": "100 g",
-        "currentPrice": "7",
-        "oldPrice": "10"
-    },
-    {
-        "name": "Chillies Green",
-        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VCHI22.png",
-        "qty": "100 g",
-        "currentPrice": "10",
-        "oldPrice": "12"
-    },
-    {
-        "name": "Sweet Corn Bunch (Bhutta)",
-        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/ESWE13.png",
-        "qty": "1 pc",
-        "currentPrice": "16",
-        "oldPrice": "22"
-    },
-    {
-        "name": "Brinjal Black / Nagpur",
-        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VBRI22.png",
-        "qty": "500 g",
-        "currentPrice": "17",
-        "oldPrice": "24"
-    },
-    {
-        "name": "Beans Chawli",
-        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VCHA12.png",
-        "qty": "250 g",
-        "currentPrice": "14",
-        "oldPrice": "19"
-    },
-    {
-        "name": "Banana Robusta",
-        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/FBAN14.png",
-        "qty": "1 kg",
-        "currentPrice": "41"
-    },
-    {
-        "name": "Mango Badami",
-        "image": "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/135/original/data?1612689931",
-        "qty": "1 kg",
-        "currentPrice": "109",
-        "oldPrice": "119"
-    },
-    {
-        "name": "Tasty Combo (2 Pcs Apple Royal Gala + 1 Kg Banana Robust...",
-        "image": "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/240/original/data?1642616123",
-        "qty": "1 unit",
-        "currentPrice": "112",
-        "oldPrice": "115"
-    },
-    {
-        "name": "Mango Lalbhag Sindhura",
-        "image": "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/250/original/data?1621065378",
-        "qty": "1 Kg",
-        "currentPrice": "225"
-    },
-    {
-        "name": "Radish",
-        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VMUL12.png",
-        "qty": "500 g",
-        "currentPrice": "25",
-        "oldPrice": "28"
-    },
-    {
-        "name": "Beans Cluster (Gavar)",
-        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VGAV12.png",
-        "qty": "250 g",
-        "currentPrice": "12",
-        "oldPrice": "16"
-    },
-    {
-        "name": "Brinjal Kateri, Baingan",
-        "image": "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/028/original/data?1616765740",
-        "qty": "250 g",
-        "currentPrice": "10",
-        "oldPrice": "15"
-    },
-    {
-        "name": "Drumstick",
-        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VDRU12.png",
-        "qty": "100 g",
-        "currentPrice": "4",
-        "oldPrice": "6"
-    },
-    {
-        "name": "Spring Onion",
-        "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/LSPR11.png",
-        "qty": "250 g",
-        "currentPrice": "14",
-        "oldPrice": "20"
-    }
-]
+var bestDeals = [];
+
+var products = JSON.parse(localStorage.getItem('products')) || [];
+
+const shuffled = products.sort(()=> 0.5 - Math.random());
+bestDeals = shuffled.slice(0,20);
+// for (let i = 0; i < 20; i++) {
+//     index = Math.floor((Math.random() * 19) + 1);
+//     bestDeals.push(products[index]);
+// }
 
 function displaySlick(data, slickDiv) {
     slickDiv.innerHTML = null;
@@ -187,6 +37,14 @@ function displaySlick(data, slickDiv) {
         qty = document.createElement('p');
         qty.innerText = el.qty;
         qty.className = 'qty fs-13';
+        units= document.createElement('span');
+        if(el.metric=='g') {
+            units.innerText = el.metric;
+        }
+        else {
+            units.innerText = " " + el.metric;
+        }
+        qty.append(units);
 
         priceDiv = document.createElement('div');
         priceDiv.className = 'price fw-500';
@@ -236,9 +94,12 @@ function displaySlick(data, slickDiv) {
 function addToCart(el) {
     cart = JSON.parse(localStorage.getItem('cart')) || [];
     alreadyAdded = false;
-    cart.forEach(function (el) {
-
+    cart.forEach(function (elem) {
+        if(elem.id==el.id) alreadyAdded = true;
     });
+    if(!alreadyAdded) {
+
+    }
 }
 
 function saveItem(el){
