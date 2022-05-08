@@ -160,3 +160,32 @@ kitchenStaples = products.filter( function (el) {
 });
 currentSlickDiv = document.querySelector('#kitchenStapleSection > .slick-content');
 displaySlick(kitchenStaples, currentSlickDiv);
+
+var mangoes = document.querySelector('#mangoes');
+mangoes.addEventListener('click',function(){
+    localStorage.setItem('currentFilter','mangoes');
+});
+
+var fruits = document.querySelector('#fruits');
+fruits.addEventListener('click',function(){
+    localStorage.setItem('currentFilter','fruits');
+});
+
+var vegetables = document.querySelector('#vegetables');
+vegetables.addEventListener('click',function(){
+    localStorage.setItem('currentFilter','vegetables');
+});
+var herbs = document.querySelector('#herbs');
+herbs.addEventListener('click',function(){
+    localStorage.setItem('currentFilter','herbs');
+});
+
+var dryFruits = document.querySelector('#dryFruits');
+dryFruits.addEventListener('click',function(){
+    localStorage.setItem('currentFilter','dry fruits');
+});
+
+var kitchenStaples = document.querySelector('#kitchenStaples');
+kitchenStaples.addEventListener('click',function(){
+    localStorage.setItem('currentFilter','kitchen staples');
+});
