@@ -252,7 +252,7 @@ body > nav > div:nth-child(3) > div {
 
 .btn.btn-outline-cart.rounded-pill.text-uppercase.px-3.py-1.d-flex.align-items-center {
     justify-content: space-evenly;
-=======
+}
 .btn.btn-outline-cart.rounded-pill.text-uppercase.px-3.py-1.d-flex.align-items-center:hover > * {
     transition: all .5s ease-in;
     color: white;
