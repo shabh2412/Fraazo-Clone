@@ -48,7 +48,8 @@
 
 #comb{
 display: flex;
-margin-top: 20px;
+margin-left: -8px;
+margin-top: 15px;
     }
  #comb>div{
      margin-left: 10px;
@@ -66,12 +67,19 @@ margin-top: 20px;
     border-radius: 20px;
     border:1px solid #4fbb90;
     
-   color: #4fbb90;
+    color: #4fbb90;
     background-color:#fff ;
     padding: 3px 15px 3px 15px;
    
 }
+.fa-cart-plus{
+    color: #4fbb90; 
+}
 #fs>button:hover{
+    color: white;
+    background-color: #4fbb90;
+}
+#fs>button:hover>.fa-cart-plus{
     color: white;
     background-color: #4fbb90;
 }
@@ -81,6 +89,7 @@ span{
 
 #sub{
     display: flex;
+    margin-top: 15px;
 }
 #sub>p{
     color: rgb(232, 125, 19);
@@ -99,7 +108,7 @@ h4{
  
     padding-top: 22px;
     padding-bottom: 11px;
-    margin-left: -50px;
+    margin-left: -40px;
     font-size: 20px;
     
 }
@@ -120,5 +129,43 @@ h4{
     font-size: 20px;
 }
 
-
-
+@media all and (min-width:250px) and (max-width:768px)
+{
+    #bn,#inf{
+        display: none;
+    }
+    #second{
+        width: 100%;
+        margin-left: .3%;
+        margin-top: .1%;
+    }
+   
+    #first>img{
+        width: 150%;
+    }
+    #first{
+        margin-top: .1%;
+        margin-left: 0.10%;
+    }
+    #main{
+        display: block;
+        width: 90%;
+        margin-left: .044%;
+    }
+    #bn{
+        margin-left: -.2%;
+    }
+    h4,#comb,#sub,button{
+        margin-left: .130%;
+        margin-top: .01%;
+    }
+    #th{
+        width: 100%;
+    }
+    #comb{
+        margin-left: .12%;
+    }
+    #bestDeals {
+        display: none;
+    }
+}

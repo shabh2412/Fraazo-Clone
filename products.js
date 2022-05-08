@@ -39,10 +39,20 @@ var currentItem=JSON.parse(localStorage.getItem("currentItem"));
  price.innerText="₹"+currentItem.currentPrice;
 
  var stprice=document.createElement("p");
- stprice.innerText="₹"+currentItem.oldPrice;
+ if(currentItem.oldPrice!=undefined)
+ {
+  stprice.innerText="₹"+currentItem.oldPrice;
+ }
+ else{
+  stprice.innerText="";
+ }
+ 
 
  var btn=document.createElement("button");
- btn.innerHTML="<i class='fa-solid fa-cart-plus'></i><span> ADD</span>";
+ btn.innerHTML="<i class='fa fa-cart-plus'></i><span> ADD</span>";
+ btn.addEventListener('click',function() {
+  addToCart(currentItem);
+ })
  
  var sub=document.createElement("div");
  sub.setAttribute("id","sub")
