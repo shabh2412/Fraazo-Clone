@@ -34,3 +34,9 @@ p, a {
 #footerImg {
     width: 100%;
 }
+
+@media all and (min-width:250px) and (max-width:768px) {
+    #footerImg, #footerSection {
+        display: none;
+    }
+}

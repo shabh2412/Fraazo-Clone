@@ -133,45 +133,39 @@ h4{
 {
     #bn,#inf{
         display: none;
-    } 
-   #second{
-       width: 100%;
-       margin-left: .3%;
-       margin-top: .1%;
-      
-   }
-   #fs{
-      
-   }
-   #first>img{
-     width: 150%;
-     }
+    }
+    #second{
+        width: 100%;
+        margin-left: .3%;
+        margin-top: .1%;
+    }
+   
+    #first>img{
+        width: 150%;
+    }
     #first{
         margin-top: .1%;
         margin-left: 0.10%;
-  }
-  #main{
-    display: block;
-    width: 90%;
-    margin-left: .044%;
-  }
-  #bn{
-      margin-left: -.2%;
-  }
- h4,#comb,#sub,button{
-     margin-left: .130%;
-     margin-top: .01%;
- }
-#th{
-    width: 100%;
+    }
+    #main{
+        display: block;
+        width: 90%;
+        margin-left: .044%;
+    }
+    #bn{
+        margin-left: -.2%;
+    }
+    h4,#comb,#sub,button{
+        margin-left: .130%;
+        margin-top: .01%;
+    }
+    #th{
+        width: 100%;
+    }
+    #comb{
+        margin-left: .12%;
+    }
+    #bestDeals {
+        display: none;
+    }
 }
-#comb{
-    margin-left: .12%;
-}
-
-
-   
-}
-
-
-
