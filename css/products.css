@@ -14,7 +14,6 @@
     
     
     
-
 }
 #first>img{
     margin-left: -15px;
@@ -26,8 +25,6 @@
     width: 50%;
     margin-right: 70px;
 }
-
-
 #fs{
     height: 40%;
    
@@ -45,7 +42,6 @@
     align-items: center;
     justify-content: space-around;
 }
-
 #comb{
 display: flex;
 margin-left: -8px;
@@ -62,7 +58,6 @@ margin-top: 15px;
      background-color:#E8E8E8 ;
      border-radius:  0px 15px 15px 15PX;
 }
-
 #fs>button{
     border-radius: 20px;
     border:1px solid #4fbb90;
@@ -86,14 +81,12 @@ margin-top: 15px;
 span{
     font-size: 15px;
 }
-
 #sub{
     display: flex;
     margin-top: 15px;
 }
 #sub>p{
     color: rgb(232, 125, 19);
-
 }
 #sub>p+p{
     padding-left: 20px;
@@ -103,7 +96,6 @@ span{
 h4{
     color: black;
 }
-
 #ds{
  
     padding-top: 22px;
@@ -128,44 +120,85 @@ h4{
     margin-left: -40px;
     font-size: 20px;
 }
-
-@media all and (min-width:250px) and (max-width:768px)
+@media all and (min-width:577px) and (max-width:768px)
 {
-    #bn,#inf{
+   #main{
+       width: 100%;
+   }
+   #first{
+       width: 50%;
+       margin-left:-8%;
+       margin-top: .025%;
+   }
+   #first>img{
+       width: 120%;
+     margin-left: 150%;
+     margin-top: 2%;
+       
+   }
+   #second{
+       width: 200%;
+       
+    
+   }
+   #fs{
+       width: 100%;
+       
+   }
+  
+  
+   #fs>h4,#sub,button{
+    margin-left: 50%;
+   }
+   #fs>#comb{
+    margin-left:48%;
+   }
+   #bn,#inf{
+       display: none;
+   }
+  
+  #ds{
+      margin-left: -.2%;
+  }
+  .bg-light{
+      display: none;
+  }
+   #bestDeals {
+    display: none;
+  }
+}
+@media all and (min-width:250px) and (max-width:576px){
+    #bestDeals {
         display: none;
-    }
-    #second{
-        width: 100%;
-        margin-left: .3%;
-        margin-top: .1%;
-    }
-   
-    #first>img{
-        width: 150%;
-    }
-    #first{
-        margin-top: .1%;
-        margin-left: 0.10%;
     }
     #main{
         display: block;
-        width: 90%;
-        margin-left: .044%;
     }
-    #bn{
-        margin-left: -.2%;
+    #first{
+        width: 40%;
     }
-    h4,#comb,#sub,button{
-        margin-left: .130%;
-        margin-top: .01%;
+    #first>img{
+        margin-left: -.03%;
     }
-    #th{
+    #second{
         width: 100%;
+        margin-top:.03%;
     }
-    #comb{
-        margin-left: .12%;
+    #fs>h4,#sub,button{
+        margin-left: 4%;
+       
     }
-    #bestDeals {
+    #fs>#comb{
+        margin-left: 2%;
+    }
+    #ds{
+        margin-left: -50%;
+    }
+    #bn,#inf{
+        display: none;
+    }
+    
+    .bg-light{
         display: none;
     }
 }

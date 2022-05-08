@@ -11,33 +11,23 @@
 //      }
    
    
-
-
-
 var currentItem=JSON.parse(localStorage.getItem("currentItem"));
-
  displayData(currentItem)
    function displayData(currentItem){
      var pic=document.createElement("img")
      pic.setAttribute("src",currentItem.image);
-
  var name=document.createElement("h4");
  name.innerText=currentItem.name;
-
  var qty=document.createElement("div");
  qty.innerText=currentItem.qty+ currentItem.metric;
-
  var sym=document.createElement("div");
  sym.setAttribute("id","sym")
  sym.innerHTML="<i class='fa-solid fa-circle-info'></i>";
-
  var combo=document.createElement("div");
  combo.setAttribute("id","comb")
  combo.append(qty,sym);
-
  var price=document.createElement("p");
  price.innerText="₹"+currentItem.currentPrice;
-
  var stprice=document.createElement("p");
  if(currentItem.oldPrice!=undefined)
  {
@@ -47,22 +37,15 @@ var currentItem=JSON.parse(localStorage.getItem("currentItem"));
   stprice.innerText="";
  }
  
-
  var btn=document.createElement("button");
  btn.innerHTML="<i class='fa fa-cart-plus'></i><span> ADD</span>";
- btn.addEventListener('click',function() {
-  addToCart(currentItem);
- })
  
  var sub=document.createElement("div");
  sub.setAttribute("id","sub")
  sub.append(price,stprice);
-
  var fs=document.querySelector("#fs");
  fs.append(name,combo,sub,btn)
-
  var first=document.querySelector("#first").append(pic);
-
  var dsc=document.createElement("h5")
  dsc.setAttribute("id","ds")
  dsc.innerText="Description";
@@ -76,7 +59,6 @@ var currentItem=JSON.parse(localStorage.getItem("currentItem"));
  ben.addEventListener("click",function(){
   benFunction()
  })
-
  var info=document.createElement("h5")
  info.innerText="Info";
  info.setAttribute("id","inf")
@@ -84,14 +66,11 @@ var currentItem=JSON.parse(localStorage.getItem("currentItem"));
  info.addEventListener("click",function(){
   infoFunction()
  })
-
  var sc=document.querySelector("#sc");
  sc.append(dsc,ben,info);
-
  var th=document.querySelector("#th");
  
 var second=document.querySelector("#second").append(fs,sc,th);
-
    
   }
   function dscFunction()
@@ -105,7 +84,6 @@ var second=document.querySelector("#second").append(fs,sc,th);
     document.querySelector("#inf").style.u="none";
    
   }
-
   function benFunction()
   {
     
@@ -117,7 +95,6 @@ var second=document.querySelector("#second").append(fs,sc,th);
     document.querySelector("#bn").style.u="green";
     document.querySelector("#inf").style.u="none";
   }
-
   function infoFunction()
   {
     th.innerText=currentItem.info;
@@ -128,5 +105,3 @@ var second=document.querySelector("#second").append(fs,sc,th);
     document.querySelector("#bn").style.u="none";
     document.querySelector("#inf").style.u="green";
   }
-
-
