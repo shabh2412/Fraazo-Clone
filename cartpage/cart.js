@@ -70,9 +70,9 @@ function displaydata(data){
 
         btn1div.append(btn1)
         btn2div.append(btn2)
-        document.querySelector("btn1div").addEventListener("click",function(){
-            decreasecount(ele)
-        })
+        // document.querySelector("btn1div").addEventListener("click",function(){
+        //     decreasecount(ele)
+        // })
 
         prod_count.append(btn1div,div_count,btn2div)
 // prod_price of price data
