@@ -69,7 +69,7 @@ var opt0=document.createElement("option")
 opt0.value="none"
 opt0.innerText="select address"
 select.append(opt0)
-select.addEventListener("click",function(){
+select.addEventListener("change",function(){
 console.log(select.value)
 
 var rem=display_add(address[select.value])
@@ -82,11 +82,11 @@ for(var i=0;i<address.length;i++){
     opt1.value=i
     select.append(opt1)
     console.log(address[i])
-    document.querySelector("#display_add>div").append(select)
 }
+document.querySelector("#display_add>div").append(select);
 // display_add()
 function display_add(data){
-    
+    document.querySelector("#display_add").innerHTML=null;
     var add_box=document.createElement("div")
     var name=document.createElement("p")
     name.innerText=data.name

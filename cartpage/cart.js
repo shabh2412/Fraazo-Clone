@@ -1,27 +1,27 @@
 
-const setProducts =(name) =>{
-    const element= document.query("#cart_box");
-    var data=JSON.parse(localStorage.getItem(name))
-    if(data=null){
+// const setProducts =(name) =>{
+//     const element= document.query("#cart_box");
+//     var data=JSON.parse(localStorage.getItem(name))
+//     if(data=null){
         
-    }
+//     }
 
-}
-// {/* <div class="sem"><img src="${" alt=""></div> */}
-
-
+// }
+// // {/* <div class="sem"><img src="${" alt=""></div> */}
 
 
-var aman_cart_data=JSON.parse(localStorage.getItem("cart_data")) 
-console.log(aman_cart_data)
-var min_quantity=1;
-localStorage.setItem("no_of_Min_quan",JSON.stringify(min_quantity))
 
 
-displaydata(aman_cart_data)
+var cart=JSON.parse(localStorage.getItem("cart")) 
+console.log(cart)
+// var min_quantity=1;
+// localStorage.setItem("no_of_Min_quan",JSON.stringify(min_quantity))
+
+
+displaydata(cart)
 
 function displaydata(data){
-    aman_cart_data.forEach(function(ele){
+    cart.forEach(function(ele){
         console.log(ele)
         var cart_box=document.createElement("div")
         cart_box.setAttribute("class","cart_box")
@@ -49,7 +49,7 @@ function displaydata(data){
 // quantity 
 
         var product_quantity=document.createElement("p")
-        product_quantity.innerText=ele.quantity;
+        product_quantity.innerText=ele.qty+" "+ele.metric;
         // quantity.append(product_quantity)
         prod_dis.append(prod_name,product_quantity)
 
@@ -62,7 +62,7 @@ function displaydata(data){
         var btn2=document.createElement("button")
         var prod_h_count=document.createElement("div")
 
-        prod_h_count.innerText=ele.quantity;
+        prod_h_count.innerText=1;//please 
         div_count.append(prod_h_count)
 
         btn1.innerText="-"
@@ -74,7 +74,7 @@ function displaydata(data){
         prod_count.append(btn1div,div_count,btn2div)
 // prod_price of price data
         var price_h4=document.createElement("h6")
-        price_h4.innerText= "₹"+ele.price;
+        price_h4.innerText= "₹"+ele.currentPrice;
         prod_price.append(price_h4)
 // remove  cart 
 var remove_cart=document.createElement("p")
@@ -92,23 +92,25 @@ remove_cart.addEventListener("click",function (){
 
     })
 }
-
+//del function
+function delfun(ele,index){
+    cart.splice(index,1)
+    localStorage.setItem("cart",JSON.stringify(cart))
+    console.log(cart)
+    window.location.reload();
+}
 
 
 
 // total cost
 
-var total_bill=JSON.parse(localStorage.getItem("totalcart_coast")) || 0
+var total_bill=JSON.parse(localStorage.getItem("total_price")) || 0
 var total_price=0;
-var total_price=aman_cart_data.reduce(function(acc,ele){
-    return acc+Number(ele.price);
+var total_price=cart.reduce(function(acc,ele){
+    return acc+Number(ele.currentPrice);
 },0);
 console.log(total_bill)
-
-
-
-
-
+localStorage.setItem("total_price",JSON.stringify(total_price))
 
 if(total_price>0){
     var discount=0.1;
@@ -118,19 +120,18 @@ if(total_price>0){
     var del_cahrge=30;
     //total_bill
     var total_bill=del_cahrge+total_price-pricesaving;
+    localStorage.setItem("total_cart_cost",JSON.stringify(total_bill))
 }else{
     total_bill=0;
-    
+    localStorage.setItem("total_bill",JSON.stringify(total_bill))
 }
 console.log(total_price)
 // discount coupan
 
-localStorage.setItem("totalcart_coast",JSON.stringify(total_bill))
-
-if(total_bill>0 ){
+if(total_price>0 ){
 
 ///transparenet side  data
-display(JSON.parse(localStorage.getItem("aman_productsdata")))
+// display(JSON.parse(localStorage.getItem("products")))
 
 function display(data){
 
@@ -164,12 +165,12 @@ function display(data){
 }
 
 
-var aman_cart_data=JSON.parse(localStorage.getItem("cart_data"))  || []
+var cart=JSON.parse(localStorage.getItem("cart"))  || []
 
 function  addcarfun(ele){
     aman_cart_data.push(ele)
     console.log(aman_cart_data)
-    localStorage.setItem("cart_data",JSON.stringify(aman_cart_data))
+    localStorage.setItem("cart_data",JSON.stringify(cart))
 }
 
     var cart_item_0box=document.createElement("div")
@@ -220,12 +221,10 @@ function  addcarfun(ele){
     // total_text_box.style.border="2px solid red"
     var total_text=document.createElement("p")
     total_text.innerText="Total"
-    total_text_box.append(total_text,total_bill)
+    total_text_box.append(total_text,total_price)
     checkout_text_box0.append(total_text_box,checkout_text_box)
 
     document.querySelector("#checkout_cart").append(checkout_text_box0)
-
-
 }
 
 else{
@@ -305,10 +304,4 @@ else{
 
 function gotofunc(){
 //    window.location.href="index.html"
-}
-function delfun(ele,index){
-    aman_cart_data.splice(index,1)
-    localStorage.setItem("cart_data",JSON.stringify(aman_cart_data))
-    console.log(aman_cart_data)
-    window.location.reload();
 }

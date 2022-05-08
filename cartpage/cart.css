@@ -19,7 +19,7 @@
     backface-visibility: hidden;
 }
 #cart_list{
-    /* border: 2px solid rgb(18, 212, 60); */
+    border: 2px solid rgb(18, 212, 60);
     width: 40%;
    
 }
@@ -43,3 +43,28 @@
     width: 40%;
     bottom: 0px;
 }
+
+
+@media all and (min-width: 50px) and (max-width: 550px) {
+
+    #cart_page{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: auto;
+        width: 100%;
+    }
+    #cart_list{
+        width: 95%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+        margin: auto;
+        gap: 30px;
+    
+    }
+    #cart_buttom{
+        width: 100%;
+        margin: auto;
+    }
+}
+

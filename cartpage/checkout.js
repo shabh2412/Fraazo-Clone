@@ -1,12 +1,11 @@
-var aman_cart_data=JSON.parse(localStorage.getItem("cart_data"))
-console.log(aman_cart_data)
-displaydata(aman_cart_data)
+var cart=JSON.parse(localStorage.getItem("cart"))
+console.log(cart)
+displaydata(cart)
 
-var total_bill=JSON.parse(localStorage.getItem("totalcart_coast")) || 0
 var total_price;
 
-var total_price=aman_cart_data.reduce(function(acc,ele){
-    return acc+Number(ele.price);
+var total_price=cart.reduce(function(acc,ele){
+    return acc+Number(ele.currentPrice);
 },0);
 localStorage.setItem("total_price",JSON.stringify(total_price))
 
@@ -28,14 +27,9 @@ function checkcode(){
     })
     console.log(enter_cup_code.value)
 
-    
-
     enter_cup_code.placeholder="Enter coupon";
     document.querySelector("#aman_bill_details").append(enter_cup_code,inpt_submit)
-    
-
 }
-
 
 if(total_price>0){
     var discount=0.1;
@@ -45,7 +39,6 @@ if(total_price>0){
     var del_cahrge=30;
     //total_bill
     var total_bill=del_cahrge+total_price-pricesaving;
-
 
     // bill data 
 
@@ -306,10 +299,8 @@ else{
 
 
 function displaydata(data){
-    aman_cart_data.forEach(function(ele){
+    cart.forEach(function(ele){
         // console.log(ele)
-
-
         var cart_box=document.createElement("div")
         cart_box.setAttribute("class","cart_box")
 

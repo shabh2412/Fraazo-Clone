@@ -6,7 +6,7 @@
 #bill_data{
     /* border: 2px solid red; */
     /* display: flex; */
-    width: 30%;
+    width: 60%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin:auto;
     
@@ -23,6 +23,7 @@
     
 }
 #add_box2{
+    margin-left: 30px;
     display: flex;
     /* border: 2px solid red; */
     width: fit-content;
@@ -32,26 +33,24 @@
     
 }
 #add_box3{
-    width: 90%;
-    margin: 10px;
+    border: 2px solid red;
+    width: 95%;
+    margin: auto;
     /* border: 2px solid red; */
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: auto;
-
-    
-
+    margin: auto; 
 }
 #address{
-    display: flex;
-    align-items: center;
-    justify-content:center;
-    color: white;
-    
+  
 }
 #display_add{
-    margin:0px ;
+    margin:10px auto;
     margin-left: 20px;
     /* border: 2px solid red; */
 }
@@ -69,39 +68,36 @@
     width: 30%;
     font-weight: bold;
 }
-@media all and (min-width: 450px) and (max-width: 750px) {
+
+
+#h2_tag>h2{
+    margin:30px;
+}
+@media all and (min-width: 150px) and (max-width: 750px) {
 
     #add_box3{
+        width: 80%;
+        display: grid;
         grid-template-columns: repeat(1, 1fr);
-      grid-template-rows: auto;
+        grid-template-rows: auto;
         margin: auto;
-    
+        gap: 50px;
     }
-    /* #display_add {
-      grid-template-columns: repeat(1, 1fr);
-      grid-template-rows: auto;
-      width: 60%;
-      font-weight: bold;
-      flex-wrap: wrap;
-      margin: 10px;
-     
+    #display_add{
+        width: 90%;
+        margin: auto;
+        border: 2px solid red;
+        border: 2px solid transparent;
+        width: 100%;
     }
-    #address {
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: auto;
-        
-            color: aqua;
-            font-weight: bolder;
-            /* border: 2px solid red; */
-            width: 60%;
-            margin: 10px;
-        
-      }
-      #bill_data {
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: auto;
-        width: 60%;
-        margin: 10px;
-        
-      } */
+    #address{
+        width: 50%;
+        margin: auto;
+        color: aqua;
+        font-weight: bolder;
+        /* border: 2px solid red; */
+    }
+    #bill_data{
+        width: 100%;
+    }
   }

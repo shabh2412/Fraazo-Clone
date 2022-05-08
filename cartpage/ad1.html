@@ -54,7 +54,7 @@
     <div class="col-12">
       <button type="submit" id="sub" class="btn btn-primary">Add adresses</button>
     </div>
-  </form>
+  -</form>
 </form>
 </div>
 </body>
@@ -62,7 +62,7 @@
 <script>
     var address= JSON.parse(localStorage.getItem("address")) || []
     document.querySelector("#sub").addEventListener("click",function(){
-        var add_obj={
+      var add_obj={
         name:document.querySelector("#inputEmail4").value,
         mobile:document.querySelector("#inputPassword4").value,
         address:document.querySelector("#inputAddress").value,
@@ -70,11 +70,11 @@
         city:document.querySelector("#inputAddress2").value,
         state:document.querySelector("#inputstate").value,
         zip:document.querySelector("#inputZip").value,
-    }
-    console.log(add_obj)
-    address.push(add_obj)
-    localStorage.setItem("address",JSON.stringify(address))
-    window.location.href="address.html"
-    alert("Adddress added")
-    })
+      }
+      console.log(add_obj)
+      address.push(add_obj)
+      localStorage.setItem("address",JSON.stringify(address))
+      window.location.href="address.html"
+      alert("Adddress added")
+    });
 </script>
