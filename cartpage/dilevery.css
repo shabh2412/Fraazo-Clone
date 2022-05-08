@@ -1,0 +1,114 @@
+#delverytype{
+    border: 2px solid rgb(145, 7, 7);
+    /* display: flex; */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+    
+    /* justify-content: space-between; */
+}
+#delverytype>div:nth-child(1){
+    border: 2px solid rgb(202, 202, 202);
+    /* width: 60%; */
+    /* display: flex; */
+    /* justify-content: space-between; */
+}
+ #expeted_delivery{
+    border: 2px solid rgb(210, 26, 226);
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: auto;
+
+}
+
+ #expeted_delivery>div:nth-child(1){
+    /* border: 2px solid rgb(107, 99, 99); */
+    width: auto;
+    height:auto;
+    background-color: rgb(218, 209, 209);
+    border-radius: 10px;
+}  
+#expeted_delivery>div:nth-child(2){
+    border: 2px solid rgb(107, 99, 99);
+    /* width: 60%; */
+    height:auto;
+    /* background-color: rgb(218, 209, 209); */
+    border-radius: 10px;
+}  
+#expeted_delivery>div:nth-child(2)>div{
+    border: 2px solid rgb(107, 99, 99);
+    width: auto;
+    height:auto;
+    background-color: rgb(218, 209, 209);
+    border-radius: 10px;
+}  
+#exp_not>button{
+    background-color: rgb(218, 209, 209);
+    width:90%;
+    height: 100%;
+    border-radius: 10px;
+    font-weight: bold;
+
+}
+.exp_not{
+    cursor: pointer;
+}
+#bill_data{
+    border: 2px solid red;
+    width: 70%;
+    margin: auto;
+}
+#p{
+    width: 80%;
+    /* border: 2px solid red; */
+    margin: auto;
+    margin-left: 20px;
+
+}
+
+
+@media all and (min-width: 50px) and (max-width: 750px) {
+
+    #delverytype{
+        width: auto;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 200px 200px 200px;
+        margin: auto;
+        gap: 30px;
+            
+    
+    }
+
+    #expeted_delivery{
+        border: 2px solid rgb(210, 26, 226);
+        display: grid;
+        gap: 40px;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: auto;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin: auto;
+    
+    }
+    #expeted_delivery>div:nth-child(2){
+        border: 2px solide rgb(231, 0, 0);
+        width: auto;
+        margin: auto;
+    }
+    #bill_data{
+        width: 100%;
+    }
+    #p>p{
+        /* border: 2px solid red; */
+        margin: auto;
+        text-align: center;
+    }
+    
+}

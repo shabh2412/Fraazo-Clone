@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #item{
+            border: 2px solid red;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        <div id="item">
+
+        </div>
+    </div>
+</body>
+</html>
+<script>
+// var sampleData = [
+//     {
+//         name: "Mango Banganapalli",
+//         image: "https://s3.ap-south-1.amazonaws.com/fraazo-prod/images/images/000/003/372/original/data?1643986229",
+//         quantity: "1kg",
+//         price: "99"
+
+//     },
+//     {
+//         name: "Bottle Gourd (Dudhi / Lauki)",
+//         image: "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VBOT12.png",
+//         quantity: "1 pc",
+//         price: "11"
+//     },
+    
+// ]
+
+var products = [
+    {
+        "id": 0,
+        "name": "Alphonso Mango Devgad",
+        "image": "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/329/original/data?1616795305",
+        "qty": "6",
+        "metric": "pcs",
+        "currentPrice": "399",
+        "benefits": "- Devgad Alphanso mangoes are naturally grown in the Devgad district of Maharashtra region of India. - Devgad Alphonso has a stronger and thicker coat. Hence, they’re less prone to getting wrinkles. - \"Alphonso\" originated from a Portuguese general’s name 'Afonso de Albuquerque'. - Alphonso mango is a very costly variety of fruit in the world also know for best in taste and aroma fruit.",
+        "info": "- Alphanso mango also very healthy highly contains vitamins like Vitamin E, Vitamin A, Carotene and minerals like Magnesium, Manganese, Phosphorus. - Did you know it helps to regulating cholestrol levels in body and digestion process by adding mango in your diet during summer season. It can be used in dried form as well and used as part of salads. - It is also season best fruit to increases eye sight, prevents night blindness and dry eyes health issues.",
+        "category": "mangoes",
+        "oldPrice": "456",
+        "count": 1,
+    },
+]
+localStorage.setItem("products",JSON.stringify(products));
+display(JSON.parse(localStorage.getItem("products")))
+function display(data){
+    data.forEach(function(ele){
+
+        // console.log(ele)
+        var card=document.createElement("div")
+        var img=document.createElement("img")
+        img.setAttribute("src",ele.image)
+        var titlename=document.createElement("p")
+        titlename.textContent=ele.name
+
+        var dic=document.createElement("p")
+        dic.innerText=ele.qty+" "+ele.metric
+        var price=document.createElement("p")
+        price.innerText=ele.currentPrice+" "
+        var addcart=document.createElement("button")
+        addcart.innerText="Add to Cart";
+        addcart.style.color = "blue";
+        addcart.style.cursor = "pointer";
+        addcart.addEventListener("click", function () {
+          //writing logic here
+          addcarfun(ele);
+        });
+        
+        card.append(img,titlename,dic,price,addcart)
+        document.querySelector("#item").append(card)
+    })
+}
+var cart=JSON.parse(localStorage.getItem("cart"))  || []
+function  addcarfun(ele){
+
+    cart.push(ele)
+    console.log(cart)
+    localStorage.setItem("cart",JSON.stringify(cart))
+    
+}
+
+</script>

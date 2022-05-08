@@ -1,0 +1,109 @@
+#main_payment{
+    display:  grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+    gap:20px;
+    
+width: 90%;
+margin: auto;
+
+    /* border: 2px solid red; */
+
+}
+#payment_part{
+    /* border:2px solid red; */
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+    gap: 30px;
+}
+#payment_part>div{
+    /* border :2px solid rgb(78, 73, 73); */
+    
+}
+#payment_method{
+    font-weight: bold;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: auto;
+    gap:20px;
+    width: fit-content;
+
+}
+#payment_method>div{
+    /* width: fit-content; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 5px;
+}
+
+#bill_data{
+    /* width: 40%; */
+    /* margin: auto; */
+    margin-left: 100px;
+    /* border: 2px solid red; */
+}
+#upi,#wallet, #card,#Cash,#net_banking{
+    cursor: pointer;
+
+}
+#wallet_box{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto;
+    gap:10px
+
+}
+#wallet_box>div{
+    /* border: 2px solid red; */
+    width: fit-content;
+    height: fit-content;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+}
+#wallet_box>div>img{
+    width: 40px;
+    height: 40px;
+}
+
+
+@media all and (min-width: 450px) and (max-width: 650px) {
+
+    #main_payment{
+        display:  grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: auto;
+        gap:20px;
+        
+    width: 90%;
+    margin: auto;
+    
+        /* border: 2px solid red; */
+    
+    }
+}
+@media all and (min-width: 50px) and (max-width: 450px) {
+
+    #main_payment{
+        display:  grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: auto;
+        gap:20px;
+        
+    width: 90%;
+    margin: auto;
+    
+        /* border: 2px solid red; */
+    
+    }
+
+    #payment_part{
+    /* border:2px solid red; */
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+    gap: 30px;
+    }
+}

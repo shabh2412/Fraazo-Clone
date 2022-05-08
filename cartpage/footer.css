@@ -1,0 +1,29 @@
+
+#playStore{
+    transform: scale(0.8);
+}
+.footerColor {
+    background-color: #165241;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+a:hover {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.pt-75 {
+    padding-top: 75px !important;
+}
+.pb-20 {
+    padding-bottom: 20px;
+}
+.w-90 {
+    width: 90%;
+    margin-top: -10%;
+}
+p, a {
+    line-height: 28px;
+}
