@@ -328,7 +328,7 @@ function displaydata(data){
 // quantity 
 
         var product_quantity=document.createElement("p")
-        product_quantity.innerText=ele.quantity;
+        product_quantity.innerText=ele.qty +" "+ele.metric;
         // quantity.append(product_quantity)
         prod_dis.append(prod_name,product_quantity)
 
@@ -342,7 +342,7 @@ function displaydata(data){
         var prod_h_count=document.createElement("div")
 
         prod_h_count.innerText=JSON.parse(localStorage.getItem("no_of_Min_quan"));
-        div_count.append(prod_h_count)
+        div_count.append(ele.qty+" "+ele.metric)
 
         btn1.innerText="-"
         btn2.innerText="+"
@@ -371,7 +371,7 @@ remove_cart.addEventListener("click",function (){
 // prod_price of price data
 
         var price_h4=document.createElement("h6")
-        price_h4.innerText= "₹"+ele.price;
+        price_h4.innerText= "₹"+ele.currentPrice;
         prod_price.append(price_h4)
 
 //append data to localstorage to cart

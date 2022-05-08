@@ -38,7 +38,7 @@
     margin: auto;
     /* border: 2px solid red; */
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(2,1fr);
     grid-template-rows: auto;
     gap: 20px;
 
@@ -52,7 +52,11 @@
 #display_add{
     margin:10px auto;
     margin-left: 20px;
-    /* border: 2px solid red; */
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: auto;
+    margin: 10px;
+    border: 2px solid red;
 }
 #display_add>div>p{
     margin-left: 10px;
@@ -61,7 +65,8 @@
 #address{
     color: aqua;
     font-weight: bolder;
-    /* border: 2px solid red; */
+    margin-left: 300px;
+    border: 2px solid red;
 }
 #display_add{
     /* border: 2px solid red; */

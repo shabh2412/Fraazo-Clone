@@ -27,6 +27,10 @@ var address= JSON.parse(localStorage.getItem("address")) || [];
 //     // form_remov.remove();
     
 // }
+
+document.querySelector("#change").addEventListener("click",function(){
+    
+})
 function  add_new_address(){
     window.location.href="ad1.html"
 }
@@ -58,6 +62,7 @@ function addresicon(){
 
     add_icon_box.append(loc_img_box,loc_text_box)
     document.querySelector("#address").append(add_icon_box)
+
 }
 
 // console.log(address)

@@ -70,6 +70,9 @@ function displaydata(data){
 
         btn1div.append(btn1)
         btn2div.append(btn2)
+        document.querySelector("btn1div").addEventListener("click",function(){
+            decreasecount(ele)
+        })
 
         prod_count.append(btn1div,div_count,btn2div)
 // prod_price of price data
@@ -85,6 +88,11 @@ remove_cart.style.cursor="pointer"
 remove_cart.addEventListener("click",function (){
     delfun(ele)
 })
+//decarese count
+function decreasecount(ele){
+    console.log("ma")
+}
+
 
 //append data to localstorage to cart
         cart_box.append(prod_img,prod_dis,quantity,prod_count,prod_price,remove_cart)
@@ -169,8 +177,8 @@ var cart=JSON.parse(localStorage.getItem("cart"))  || []
 
 function  addcarfun(ele){
     aman_cart_data.push(ele)
-    console.log(aman_cart_data)
-    localStorage.setItem("cart_data",JSON.stringify(cart))
+    console.log(cart)
+    localStorage.setItem("cart",JSON.stringify(cart))
 }
 
     var cart_item_0box=document.createElement("div")
@@ -224,7 +232,7 @@ function  addcarfun(ele){
     total_text_box.append(total_text,total_price)
     checkout_text_box0.append(total_text_box,checkout_text_box)
 
-    document.querySelector("#checkout_cart").append(checkout_text_box0)
+    document.querySelector("#cart_item").append(checkout_text_box0)
 }
 
 else{

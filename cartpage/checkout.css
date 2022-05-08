@@ -1,6 +1,6 @@
 /* *{margin: 0px;padding: 0px;} */
 .aman_cart_section{
-    border:2px solid red;
+    /* border:2px solid red; */
 }
 #aman_cart_status{
     /* border:2px solid red; */
@@ -8,24 +8,29 @@
     margin: auto;
 }
 #aman_sub_cart_section{
-    display: flex;
-    border: 2px solid red;
+    
+    /* border: 2px solid red; */
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 10px;
+    margin: 10px;
 }
 #amancart_part{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     /* height: 700px; */
     width: auto;
-    margin: auto;
+    margin-right: 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 
 }
 #aman_bill_details{
-border: 2px solid green;
+/* border: 2px solid green; */
 /* height: 700px; */
 width: 100%;
-margin: auto;
+height: fit-content;
+box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+border-radius: 5px;
+/* margin: auto; */
 
 }
 .price_box:last-child{

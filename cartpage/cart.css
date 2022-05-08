@@ -21,17 +21,17 @@
 #cart_list{
     border: 2px solid rgb(18, 212, 60);
     width: 40%;
+    height: auto;
    
 }
  #cart_head{
-    /* border: 2px solid rgb(53, 47, 47); */
+    border: 2px solid rgb(167, 36, 36);
     background-color: white;
     position: sticky;
     top:85px;
     left:820px;
  } 
 #cart_buttom{
-
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -39,10 +39,11 @@
     color: white;
     padding: 10px;
     
-    position: fixed;
+    /* position: fixed;
     width: 40%;
-    bottom: 0px;
+    bottom:0px; */
 }
+
 
 
 @media all and (min-width: 50px) and (max-width: 550px) {
