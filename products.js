@@ -38,6 +38,10 @@ var currentItem=JSON.parse(localStorage.getItem("currentItem"));
  }
  
  var btn=document.createElement("button");
+//  btn.setAttribute('id','addToCartButton');
+btn.addEventListener('click',function(){
+  addCurrentItemToCartFunction();
+})
  btn.innerHTML="<i class='fa fa-cart-plus'></i><span> ADD</span>";
  
  var sub=document.createElement("div");
@@ -105,3 +109,24 @@ var second=document.querySelector("#second").append(fs,sc,th);
     document.querySelector("#bn").style.u="none";
     document.querySelector("#inf").style.u="green";
   }
+
+function addCurrentItemToCartFunction() {
+  var currentItem = JSON.parse(localStorage.getItem('currentItem'));
+  cart = JSON.parse(localStorage.getItem('cart')) || [];
+    alreadyAdded = false;
+    index = undefined;
+    cart.forEach(function (elem,ind) {
+        if(elem.id==currentItem.id) {
+            alreadyAdded = true;
+            index = ind;
+        }
+    });
+    if(alreadyAdded) {
+        cart[index].count++;
+    }
+    else {
+        currentItem.count = 1;
+        cart.push(currentItem);
+    }
+    localStorage.setItem('cart',JSON.stringify(cart));
+}
