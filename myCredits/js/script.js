@@ -65,7 +65,7 @@ function displayCredits() {
     helpDiv.style.display = 'none';
     // var credits = user.credits || 0;
     var credits = 0;
-    if(user.credits !== null) {
+    if(user.credits !== null || user.credits!== undefined) {
         credits = user.credits;
     }
     document.querySelector('#fraazoCredits > span').innerText = credits;

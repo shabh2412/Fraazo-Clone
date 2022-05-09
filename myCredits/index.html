@@ -332,7 +332,7 @@
             console.log("OTP:",OTP);
             var userOtp = prompt('Enter OTP: \(Check console\)');
             if (userOtp == OTP) {
-                user.contact = num;
+                user.phone = num;
                 alert('Number Updated Successfully');
                 localStorage.setItem('user', JSON.stringify(user));
                 displayUserData();
