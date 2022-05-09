@@ -7,28 +7,36 @@ document.querySelector(".exp_not").addEventListener("click",function(){
 })
 
 
-document.querySelector("#tomorrow").addEventListener("click",function(){
+document.querySelector("#today").addEventListener("click",function(){
     // console.log("sdf")
     var date_box=document.createElement("div")
     var del_date=document.createElement("label")
-    del_date.innerText="Enter del. date:"
+    del_date.innerText="Date:";
     var date_input=document.createElement("input")
-    date_input.placeholder="date/month/year"
+    date_input.type="date"
+    // date_input.placeholder="date/month/year"
 
     var time_box=document.createElement("div")
     var del_time=document.createElement("label")
     del_time.innerText="Time:"
     var time_input=document.createElement("input")
-    time_input.placeholder="Time:00 AM/PM"
+    time_input.type="time"
+    // time_input.placeholder="Time:00 AM/PM"
     time_box.append(del_time,time_input)
 
-    var sub=document.createElement("button")
+    var sub_mit=document.createElement("div")
+    sub_mit.style.borderRadius="10px"
+    sub_mit.style.border="2px solid white"
+    sub_mit.style.backgroundColor=" rgb(218, 209, 209)"
+    sub_mit.style.cursor="pointer"
+    var sub=document.createElement("p")
     sub.innerText="submit"
-    date_box.append(del_date,date_input,time_box,sub)
+    sub_mit.append(sub)
+    date_box.append(del_date,date_input,time_box,sub_mit)
     document.querySelector("#today_date").append(date_box)
-    var devery_time=[]
-    var devery_time=JSON.parse(localStorage.getItem("devery_time")) || []
-    sub.addEventListener("click",function(){
+    var dilevery_time=[]
+    var dilevery_time=JSON.parse(localStorage.getItem("devery_time")) || []
+    sub_mit.addEventListener("click",function(){
         document.querySelector("#today_date").innerHTML=null
         // document.querySelector("today_date").innerHTML=null;
         // localStorage.setItem("delivery_date",JSON.stringify(date_input.value))
@@ -37,10 +45,57 @@ document.querySelector("#tomorrow").addEventListener("click",function(){
             del_date:date_input.value,
             del_time:time_input.value
         };
-        cart_data.push(del_obj)
-        devery_time.push(del_obj)
+        dilevery_time.push(del_obj)
+        dilevery_time.push(del_obj)
         console.log(cart_data)
-       localStorage.setItem("devery_time",JSON.stringify(devery_time));
+        console.log(dilevery_time)
+       localStorage.setItem("devery_time",JSON.stringify(dilevery_time));
+
+    })
+})
+document.querySelector("#tomorrow").addEventListener("click",function(){
+    // console.log("sdf")
+    var date_box=document.createElement("div")
+    var del_date=document.createElement("label")
+    del_date.innerText="Date:";
+    var date_input=document.createElement("input")
+    date_input.type="date"
+    // date_input.placeholder="date/month/year"
+
+    var time_box=document.createElement("div")
+    var del_time=document.createElement("label")
+    del_time.innerText="Time:"
+    var time_input=document.createElement("input")
+    time_input.type="time"
+    // time_input.placeholder="Time:00 AM/PM"
+    time_box.append(del_time,time_input)
+
+    var sub_mit=document.createElement("div")
+    sub_mit.style.borderRadius="10px"
+    sub_mit.style.border="2px solid white"
+    sub_mit.style.backgroundColor=" rgb(218, 209, 209)"
+    sub_mit.style.cursor="pointer"
+    var sub=document.createElement("p")
+    sub.innerText="submit"
+    sub_mit.append(sub)
+    date_box.append(del_date,date_input,time_box,sub_mit)
+    document.querySelector("#today_date").append(date_box)
+    var dilevery_time=[]
+    var dilevery_time=JSON.parse(localStorage.getItem("devery_time")) || []
+    sub_mit.addEventListener("click",function(){
+        document.querySelector("#today_date").innerHTML=null
+        // document.querySelector("today_date").innerHTML=null;
+        // localStorage.setItem("delivery_date",JSON.stringify(date_input.value))
+        var cart_data=JSON.parse(localStorage.getItem("cart_data"))
+        var del_obj={
+            del_date:date_input.value,
+            del_time:time_input.value
+        };
+        dilevery_time.push(del_obj)
+        dilevery_time.push(del_obj)
+        console.log(cart_data)
+        console.log(dilevery_time)
+       localStorage.setItem("devery_time",JSON.stringify(dilevery_time));
 
     })
 })
@@ -204,7 +259,7 @@ var box_address_text=document.createElement("h6")
 box_address_text.innerText="make payment";
 box_address_text.style.cursor="pointer"
 box_address_text.addEventListener("click",function (){
-    window.location.href="address.html"
+    window.location.href="payment.html"
 })
 box2_payement.append(box_address_text)
 payment_box.append(box1_payement,box2_payement)

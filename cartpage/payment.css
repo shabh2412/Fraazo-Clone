@@ -36,8 +36,17 @@ margin: auto;
     /* width: fit-content; */
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 5px;
+    display: flex;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
 }
-
+#payment_method>div:hover{
+    background-color: aqua;
+    color: white;
+}
 #bill_data{
     /* width: 40%; */
     /* margin: auto; */
@@ -60,12 +69,44 @@ margin: auto;
     width: fit-content;
     height: fit-content;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 #wallet_box>div>img{
     width: 40px;
     height: 40px;
+    border: 2px solid rgb(226, 218, 218);
+    border-radius: 10px;
 }
+.make_pay{
+    border: 2px solid rgb(226, 218, 218);
+    width: 90%;
+    margin:auto;
+}
+.pay_styl{
+    
+    width: 100%;
+    margin: auto;
+    height: auto;
+    border: 2px solid rgb(173, 163, 163);
+}
+.pay_styl>div{
+    margin: 30px;
+}
+.make_pay{
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: aqua;
+    align-items: center;
+    color:white;
+    font-weight: bold;
+    margin: auto;
+    width: 80%;
+}
+.make_pay:hover{
+    
+}
+
 
 
 @media all and (min-width: 450px) and (max-width: 650px) {

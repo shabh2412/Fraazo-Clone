@@ -68,6 +68,8 @@ function addresicon(){
 // console.log(address)
 // display data addres
 var select=document.createElement("select")
+var sub=document.createElement("button")
+sub.innerText="submit"
 select.setAttribute("id","select")
 var add_value;
 var opt0=document.createElement("option")
@@ -109,7 +111,14 @@ function display_add(data){
     zip.innerText=data.zip;
     
     add_box.append(name,mobile,add1,add2,city,state,zip)
-    document.querySelector("#display_add").append(add_box)
+    document.querySelector("#display_add").append(add_box,sub)
+}
+sub.addEventListener("click",function(){
+    del_add_del(address)
+})
+function del_add_del(addr){
+console.log(addr)
+localStorage.setItem("delivery_address",json.stringify(addr))
 }
 
 var total_price=JSON.parse(localStorage.getItem("total_price"))
@@ -299,10 +308,10 @@ box1_payement.append(box1_1_text,box1_2_text)
 
 // var box_address=document.createElement("div")
 var box_address_text=document.createElement("h6")
-box_address_text.innerText="SELECT ADDRESS";
+box_address_text.innerText="PROCCED";
 box_address_text.style.cursor="pointer"
 box_address_text.addEventListener("click",function (){
-    window.location.href="address.html"
+    window.location.href="dilevery.html"
 })
 box2_payement.append(box_address_text)
 payment_box.append(box1_payement,box2_payement)

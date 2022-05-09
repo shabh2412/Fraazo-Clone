@@ -8,19 +8,13 @@
 
 // }
 // // {/* <div class="sem"><img src="${" alt=""></div> */}
-
-
-
-
-var cart=JSON.parse(localStorage.getItem("cart")) 
-console.log(cart)
+var cart=JSON.parse(localStorage.getItem("cart"))
 // var min_quantity=1;
 // localStorage.setItem("no_of_Min_quan",JSON.stringify(min_quantity))
-
-
 displaydata(cart)
 
 function displaydata(data){
+    document.querySelector("#cart_item").innerHTML = null;
     cart.forEach(function(ele){
         console.log(ele)
         var cart_box=document.createElement("div")
@@ -49,7 +43,7 @@ function displaydata(data){
 // quantity 
 
         var product_quantity=document.createElement("p")
-        product_quantity.innerText=ele.qty+" "+ele.metric;
+        product_quantity.innerText=ele.qty*ele.count+" "+ele.metric;
         // quantity.append(product_quantity)
         prod_dis.append(prod_name,product_quantity)
 
@@ -62,7 +56,7 @@ function displaydata(data){
         var btn2=document.createElement("button")
         var prod_h_count=document.createElement("div")
 
-        prod_h_count.innerText=1;//please 
+        prod_h_count.innerText=ele.count;//please 
         div_count.append(prod_h_count)
 
         btn1.innerText="-"
@@ -70,14 +64,28 @@ function displaydata(data){
 
         btn1div.append(btn1)
         btn2div.append(btn2)
-        // document.querySelector("btn1div").addEventListener("click",function(){
-        //     decreasecount(ele)
-        // })
+
+        btn1div.addEventListener("click",function(){
+           
+            // decreaseCount(ele);
+            if(ele.count>1){
+                decreaseCount(ele);
+
+            }
+        })
+
+        btn2div.addEventListener("click",function(){
+        
+            increaseCount(ele);
+            
+        });
+    
+
 
         prod_count.append(btn1div,div_count,btn2div)
 // prod_price of price data
         var price_h4=document.createElement("h6")
-        price_h4.innerText= "₹"+ele.currentPrice;
+        price_h4.innerText= "₹"+ele.currentPrice*ele.count;
         prod_price.append(price_h4)
 // remove  cart 
 var remove_cart=document.createElement("p")
@@ -88,11 +96,6 @@ remove_cart.style.cursor="pointer"
 remove_cart.addEventListener("click",function (){
     delfun(ele)
 })
-//decarese count
-function decreasecount(ele){
-    console.log("ma")
-}
-
 
 //append data to localstorage to cart
         cart_box.append(prod_img,prod_dis,quantity,prod_count,prod_price,remove_cart)
@@ -100,6 +103,44 @@ function decreasecount(ele){
 
     })
 }
+
+// counter 
+function increaseCount(ele) {
+    cart.forEach(function(elem) {
+        if(elem.id== ele.id) {
+            cost = Number(localStorage.getItem("total_price"));
+            elem.count++;
+            cost += Number(elem.currentPrice);
+            localStorage.setItem('total_price',cost);
+        }
+    })
+    localStorage.setItem("cart",JSON.stringify(cart));
+    displaydata(cart);
+    let cartPrice = document.querySelector("#cartPrice");
+    let total_bill_amount = localStorage.getItem('total_price');
+    cartPrice.innerText = total_bill_amount;
+}
+function decreaseCount(ele,index) {
+    cart.forEach(function(elem) {
+        if(elem.id== ele.id) {
+            cost = Number(localStorage.getItem("total_price"));
+            elem.count--;
+            cost -= Number(elem.currentPrice);
+            localStorage.setItem('total_price',cost);
+        }
+    })
+    if(ele.count<1){
+        delfun(ele,index)
+    }
+    localStorage.setItem("cart",JSON.stringify(cart));
+    displaydata(cart);
+    let cartPrice = document.querySelector("#cartPrice");
+    let total_bill_amount = localStorage.getItem('total_price');
+    cartPrice.innerText = total_bill_amount;
+}
+
+
+
 //del function
 function delfun(ele,index){
     cart.splice(index,1)
@@ -112,12 +153,14 @@ function delfun(ele,index){
 
 // total cost
 
+
+
 var total_bill=JSON.parse(localStorage.getItem("total_price")) || 0
-var total_price=0;
+
 var total_price=cart.reduce(function(acc,ele){
-    return acc+Number(ele.currentPrice);
+    return acc+Number(ele.currentPrice)*(ele.count);
 },0);
-console.log(total_bill)
+console.log(total_price)
 localStorage.setItem("total_price",JSON.stringify(total_price))
 
 if(total_price>0){
@@ -128,23 +171,19 @@ if(total_price>0){
     var del_cahrge=30;
     //total_bill
     var total_bill=del_cahrge+total_price-pricesaving;
-    localStorage.setItem("total_cart_cost",JSON.stringify(total_bill))
 }else{
     total_bill=0;
-    localStorage.setItem("total_bill",JSON.stringify(total_bill))
+    
 }
-console.log(total_price)
-// discount coupan
-
-if(total_price>0 ){
+// // discount coupan
+var total_price=JSON.parse(localStorage.getItem("total_price"))
+if(total_price>0){
 
 ///transparenet side  data
-// display(JSON.parse(localStorage.getItem("products")))
-
+display(JSON.parse(localStorage.getItem("cart")))
 function display(data){
 
     data.forEach(function(ele){
-
         // console.log(ele)
         var card=document.createElement("div")
 
@@ -154,9 +193,9 @@ function display(data){
         titlename.textContent=ele.name
 
         var dic=document.createElement("p")
-        dic.innerText=ele.quantity
+        dic.innerText=ele.qty+" "+ele.metric;
         var price=document.createElement("p")
-        price.innerText=ele.price
+        price.innerText=ele.currentPrice
 
         var addcart=document.createElement("button")
         addcart.innerText="Add to Cart";
@@ -176,9 +215,19 @@ function display(data){
 var cart=JSON.parse(localStorage.getItem("cart"))  || []
 
 function  addcarfun(ele){
-    aman_cart_data.push(ele)
+    cart = JSON.parse(localStorage.getItem("cart")) || [];
+    alreadyAdded = false;
+    cart.forEach(function (elem) {
+        if(elem.id==ele.id) alreadyAdded = true;
+        console.log("allready add")
+        alert("cart is allreday add")
+    });
+    if(!alreadyAdded) {
+    
+    cart.push(ele)
     console.log(cart)
     localStorage.setItem("cart",JSON.stringify(cart))
+    }
 }
 
     var cart_item_0box=document.createElement("div")
@@ -196,7 +245,7 @@ function  addcarfun(ele){
     cart_item_2box_txt.innerText="X"
     cart_item_2box_txt.style.cursor="pointer"
     cart_item_2box_txt.addEventListener("click",function(){
-        window.location.href="index.html"
+        window.location.href="../index.html"
     })
     cart_item_2box.append(cart_item_2box_txt)
     cart_item_0box.append(cart_item_1box,cart_item_2box)
@@ -228,11 +277,14 @@ function  addcarfun(ele){
     var total_text_box=document.createElement("div")
     // total_text_box.style.border="2px solid red"
     var total_text=document.createElement("p")
-    total_text.innerText="Total"
-    total_text_box.append(total_text,total_price)
+    total_text.innerText="Total";
+    var total_price_span = document.createElement("span");
+    total_price_span.innerText = total_price;
+    total_price_span.id = 'cartPrice'
+    total_text_box.append(total_text,total_price_span);
     checkout_text_box0.append(total_text_box,checkout_text_box)
 
-    document.querySelector("#cart_item").append(checkout_text_box0)
+    document.querySelector("#cart_list").append(checkout_text_box0)
 }
 
 else{
@@ -253,7 +305,7 @@ else{
     cart_item_2box_txt.innerText="X"
     cart_item_2box_txt.style.cursor="pointer"
     cart_item_2box_txt.addEventListener("click",function(){
-        window.location.href="index.html"
+        window.location.href="../index.html"
     })
     
     
@@ -293,7 +345,7 @@ else{
     
     var cart_em_box_letsshopping_button=document.createElement("button")
     cart_em_box_letsshopping_button.addEventListener("click",function(){
-        window.location.href="index.html"
+        window.location.href="../index.html"
     })
     cart_em_box_letsshopping_button.innerText="Let's Shop!"
     cart_em_box_letsshopping_button.style.fontWeight="bold"
@@ -308,8 +360,4 @@ else{
     cart_em_box.append(cart_em_box_img,cart_em_box_txt,cart_em_box_txt_para1,cart_em_box_txt_para2,cart_em_box_letsshopping)
     document.querySelector("#cart_item").append(cart_em_box)
 
-}
-
-function gotofunc(){
-//    window.location.href="index.html"
 }
