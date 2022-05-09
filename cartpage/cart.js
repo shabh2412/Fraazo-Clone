@@ -14,6 +14,7 @@ var cart=JSON.parse(localStorage.getItem("cart"))
 displaydata(cart)
 
 function displaydata(data){
+    document.querySelector("#cart_item").innerHTML = null;
     cart.forEach(function(ele){
         console.log(ele)
         var cart_box=document.createElement("div")
@@ -66,9 +67,8 @@ function displaydata(data){
 
         btn1div.addEventListener("click",function(){
            
-            decreaseCount(ele);
-            window.location.reload()
-            if(ele.count<1){
+            // decreaseCount(ele);
+            if(ele.count>1){
                 decreaseCount(ele);
 
             }
@@ -76,7 +76,6 @@ function displaydata(data){
 
         btn2div.addEventListener("click",function(){
         
-            window.location.reload()
             increaseCount(ele);
             
         });
@@ -109,17 +108,25 @@ remove_cart.addEventListener("click",function (){
 function increaseCount(ele) {
     cart.forEach(function(elem) {
         if(elem.id== ele.id) {
-          
+            cost = Number(localStorage.getItem("total_price"));
             elem.count++;
+            cost += Number(elem.currentPrice);
+            localStorage.setItem('total_price',cost);
         }
     })
     localStorage.setItem("cart",JSON.stringify(cart));
     displaydata(cart);
+    let cartPrice = document.querySelector("#cartPrice");
+    let total_bill_amount = localStorage.getItem('total_price');
+    cartPrice.innerText = total_bill_amount;
 }
 function decreaseCount(ele,index) {
     cart.forEach(function(elem) {
         if(elem.id== ele.id) {
+            cost = Number(localStorage.getItem("total_price"));
             elem.count--;
+            cost -= Number(elem.currentPrice);
+            localStorage.setItem('total_price',cost);
         }
     })
     if(ele.count<1){
@@ -127,6 +134,9 @@ function decreaseCount(ele,index) {
     }
     localStorage.setItem("cart",JSON.stringify(cart));
     displaydata(cart);
+    let cartPrice = document.querySelector("#cartPrice");
+    let total_bill_amount = localStorage.getItem('total_price');
+    cartPrice.innerText = total_bill_amount;
 }
 
 
@@ -235,7 +245,7 @@ function  addcarfun(ele){
     cart_item_2box_txt.innerText="X"
     cart_item_2box_txt.style.cursor="pointer"
     cart_item_2box_txt.addEventListener("click",function(){
-        window.location.href="index.html"
+        window.location.href="../index.html"
     })
     cart_item_2box.append(cart_item_2box_txt)
     cart_item_0box.append(cart_item_1box,cart_item_2box)
@@ -267,8 +277,11 @@ function  addcarfun(ele){
     var total_text_box=document.createElement("div")
     // total_text_box.style.border="2px solid red"
     var total_text=document.createElement("p")
-    total_text.innerText="Total"
-    total_text_box.append(total_text,total_price)
+    total_text.innerText="Total";
+    var total_price_span = document.createElement("span");
+    total_price_span.innerText = total_price;
+    total_price_span.id = 'cartPrice'
+    total_text_box.append(total_text,total_price_span);
     checkout_text_box0.append(total_text_box,checkout_text_box)
 
     document.querySelector("#cart_list").append(checkout_text_box0)
@@ -292,7 +305,7 @@ else{
     cart_item_2box_txt.innerText="X"
     cart_item_2box_txt.style.cursor="pointer"
     cart_item_2box_txt.addEventListener("click",function(){
-        window.location.href="index.html"
+        window.location.href="../index.html"
     })
     
     
@@ -332,7 +345,7 @@ else{
     
     var cart_em_box_letsshopping_button=document.createElement("button")
     cart_em_box_letsshopping_button.addEventListener("click",function(){
-        window.location.href="index.html"
+        window.location.href="../index.html"
     })
     cart_em_box_letsshopping_button.innerText="Let's Shop!"
     cart_em_box_letsshopping_button.style.fontWeight="bold"

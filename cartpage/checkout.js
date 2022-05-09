@@ -43,7 +43,8 @@ function checkcode(){
     inpt_submit.style.cursor="pointer"
     inpt_submit.addEventListener("click",function(){
         if(enter_cup_code.value=="AMAN10"){
-            alert("applied succefully")
+            alert("applied succefully");
+            
         }else{
             alert("Wrong Code Applied")
         }
@@ -245,6 +246,7 @@ box1_payement.append(box1_1_text,box1_2_text)
 // var box_address=document.createElement("div")
 var box_address_text=document.createElement("h6")
 box_address_text.innerText="SELECT ADDRESS";
+box_address_text.classList = 'btn border border-success'
 box_address_text.style.cursor="pointer"
 box_address_text.addEventListener("click",function (){
     window.location.href="address.html"
@@ -291,7 +293,7 @@ else{
     letshoping_inner_box.style.width="30%"
     letshoping_inner_box.style.cursor="pointer"
     letshoping_inner_box.addEventListener("click",function(){
-        window.location.href="index.html"
+        window.location.href="../index.html"
     })
     letshoping_inner_box.style.height="60px"
     letshoping_inner_box.style.margin="auto"
@@ -324,6 +326,7 @@ else{
 
 
 function displaydata(data){
+    document.querySelector("#cart").innerHTML = null;
     cart.forEach(function(ele){
         // console.log(ele)
         var cart_box=document.createElement("div")
@@ -402,17 +405,25 @@ remove_cart.addEventListener("click",function (){
 function increaseCount(ele) {
     cart.forEach(function(elem) {
         if(elem.id== ele.id) {
-          
+            cost = Number(localStorage.getItem("total_price"));
             elem.count++;
+            cost += Number(elem.currentPrice);
+            localStorage.setItem('total_price',cost);
         }
     })
     localStorage.setItem("cart",JSON.stringify(cart));
     displaydata(cart);
+    let cartPrice = document.querySelector("#cartPrice");
+    let total_bill_amount = localStorage.getItem('total_price');
+    cartPrice.innerText = total_bill_amount;
 }
 function decreaseCount(ele,index) {
     cart.forEach(function(elem) {
         if(elem.id== ele.id) {
+            cost = Number(localStorage.getItem("total_price"));
             elem.count--;
+            cost -= Number(elem.currentPrice);
+            localStorage.setItem('total_price',cost);
         }
     })
     if(ele.count<1){
@@ -420,6 +431,9 @@ function decreaseCount(ele,index) {
     }
     localStorage.setItem("cart",JSON.stringify(cart));
     displaydata(cart);
+    let cartPrice = document.querySelector("#cartPrice");
+    let total_bill_amount = localStorage.getItem('total_price');
+    cartPrice.innerText = total_bill_amount;
 }
 
 

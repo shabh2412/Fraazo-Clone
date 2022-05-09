@@ -97,10 +97,23 @@
         var enter_otp=document.querySelector("#otp").value
         if(enter_otp==1234){
         alert("payment succesfull")
-        window.location.href="index.html"
+        var cart = JSON.parse(localStorage.getItem("cart"));
+        var user = JSON.parse(localStorage.getItem("user"));
+        // console.log(user.orders !== undefined);
+        if (user.orders !== undefined) {
+            user.orders.push(cart);
         }
-        else{
-            alert("please enter vaild otp")
+        else {
+            user.orders = [];
+            user.orders.push(cart);
         }
+        localStorage.setItem("user",JSON.stringify(user));
+        cart = [];
+        localStorage.removeItem('cart');
+        window.location.href="../index.html";
+    }
+    else{
+        alert("please enter vaild otp")
+    }
     })
 </script>
