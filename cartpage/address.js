@@ -308,7 +308,7 @@ box1_payement.append(box1_1_text,box1_2_text)
 
 // var box_address=document.createElement("div")
 var box_address_text=document.createElement("h6")
-box_address_text.innerText="PROCCED";
+box_address_text.innerText="PROCEED TO PAY";
 box_address_text.style.cursor="pointer"
 box_address_text.addEventListener("click",function (){
     window.location.href="dilevery.html"

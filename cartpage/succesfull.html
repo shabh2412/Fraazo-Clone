@@ -46,7 +46,7 @@
         <div>
             <!-- brand and location -->
             <div>
-                <img src="./svg/logo.svg" alt="fraazo">
+                <img id="homeBtn" src="../svg/logo.svg" alt="fraazo">
             </div>
             <div>
                 <button class="btn">
@@ -91,7 +91,13 @@
 </body>
 </html>
 <script>
-
+    var homeImg = document.querySelector('#homeBtn');
+    homeImg.style.cursor="pointer";
+    homeImg.addEventListener("click",function(){
+        window.location.href="../index.html";
+    })
+</script>
+<script>
     document.querySelector("#sub").addEventListener("click",function(){
 
         var enter_otp=document.querySelector("#otp").value

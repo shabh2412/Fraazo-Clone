@@ -14,11 +14,11 @@
 </head>
 <body>
 
-     <nav class="bg-light">
+    <nav class="bg-light">
         <div>
             <!-- brand and location -->
             <div>
-                <img src="/svg/logo.svg" alt="fraazo">
+                <img id="homeBtn" src="../svg/logo.svg" alt="fraazo">
             </div>
             <div>
                 <button class="btn">
@@ -34,15 +34,27 @@
         <div>
             <div>
                 <i class="fa-solid fa-cart-shopping"></i>
-                <p class="mb-0">Cart</p>
+                <p class="mb-0">
+                    <a href="./cart.html">
+                        Cart
+                    </a>
+                </p>
             </div>
             <div>
                 <i class="fa-solid fa-wallet"></i>
-                <p class="mb-0">Credits</p>
+                <p class="mb-0">
+                    <a href="../myCredits/">
+                        Credits
+                    </a>
+                </p>
             </div>
             <div>
                 <i class="fa-solid fa-user"></i>
-                <p class="mb-0">Login</p>
+                <p class="mb-0">
+                    <a href="../loginSignup/">
+                        Login
+                    </a>
+                </p>
             </div>
         </div>
 
@@ -135,6 +147,12 @@
         </div>
 </body>
 </html>
-
+<script>
+    var homeImg = document.querySelector('#homeBtn');
+    homeImg.style.cursor="pointer";
+    homeImg.addEventListener("click",function(){
+        window.location.href="../index.html";
+    })
+</script>
 <script src="checkout.js"></script>
 <!-- <script src="/cartpage/cart.js"></script> -->
