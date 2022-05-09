@@ -249,7 +249,7 @@
 <script>
     var guestUser = {
         name : 'Guest',
-        contact: 'xxxx-xxx-xxx',
+        phone: 'xxxx-xxx-xxx',
         email: 'guest@example.com',
         password: "1234",
         orders: [
@@ -313,7 +313,7 @@
     function displayUserData() {
         user = JSON.parse(localStorage.getItem('user')) || {};
         var mobileNumberSpan = document.querySelector('#mobileNumber > span');
-        mobileNumberSpan.innerText = user.contact;
+        mobileNumberSpan.innerText = user.phone;
     }
 
     var updateMobileBtn = document.querySelector('#updateMobile');
