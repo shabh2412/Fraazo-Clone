@@ -8,7 +8,7 @@
 
 // }
 // // {/* <div class="sem"><img src="${" alt=""></div> */}
-var cart=JSON.parse(localStorage.getItem("cart"))
+var cart=JSON.parse(localStorage.getItem("cart")) || [];
 // var min_quantity=1;
 // localStorage.setItem("no_of_Min_quan",JSON.stringify(min_quantity))
 displaydata(cart)
