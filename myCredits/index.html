@@ -247,11 +247,11 @@
 </script>
 
 <script>
-    var user = {
-        name : 'Rishabh',
-        email: 'rishabhpanesar@gmail.com',
-        contact: "7738738680",
-        password: "abcdef",
+    var guestUser = {
+        name : 'Guest',
+        contact: 'xxxx-xxx-xxx',
+        email: 'guest@example.com',
+        password: "1234",
         orders: [
         [
   {
@@ -307,10 +307,7 @@
         ],
         credits: 0,
     }
-
-
-
-    localStorage.setItem('user', JSON.stringify(user));
+    user = JSON.parse(localStorage.getItem('user')) || guestUser;
     displayUserData();
 
     function displayUserData() {
