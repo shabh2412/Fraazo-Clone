@@ -293,46 +293,51 @@ input {
       <span class="close">&times;</span>
       <div class="container" id="container">
   <div class="form-container sign-up-container">
-      <form action="">
+      <form id="formContainer">
           <h1 style="padding-top: 15px"> Create Account</h1>
-          <input type="text" name="fname" placeholder="First Name">
-          <input type="text" name="lname" placeholder="Last Name">
+       <!--   <input type="text" name="fname" placeholder="First Name">
+          <input type="text" name="lname" placeholder="Last Name"> -->
           <!--  <input type="text" name="address" placeholder="Address">   -->
+          <input type="email" name="email" id="email" placeholder="Enter email">
           <input type="password" name="password" placeholder="Password">
-          <input type="text" name="phone" placeholder="Phone Number">
+          <input type="phonenumber" name="phone" placeholder="Phone Number">
           <!--<input type="number" name="age" placeholder="Age">  -->
           <button style="margin-top:10px"> Create Account</button>
           <h5>Already have an account! <a class="ghost" id="signIn" style="color:blue;"><u>Sign In</u></a></h5>  
+          
       </form>
   </div>
-  <div class="form-container sign-in-container">
-      <form action="#">
+
+ <div class="form-container sign-in-container">
+      <form  id="formcontainer">
           <h1 style="padding-bottom: 15px"> Login Now</h1>
-          <input type="number" name="Phone Number" placeholder="Phone Number">
+         
+          <input type="number" name="phonenumber" placeholder="Phone Number">
+         
           <input type="password" name="password" placeholder="Password">
           <a href="#" style="padding-left:150px; font-weight: bold"> Forgot Your Password?</a>
           <button  style="margin-top: 10px"> Sign In...</button>
           <h5>New to here! <a class="ghost" id="signUp" style="color:blue;"><u>Sign Up</u></a></h5>
-      </form>
-      
+          <h5>Login Through OTP <a href="otp.html" class="ghost" id="signin" style="color:blue;"><u>Sign In</u></a></h5>
+       </form>      
   </div>
   <div class="overlay-container">
-      <div class="overlay">
-          <div class="overlay-panel overlay-left">
-              <img src="https://referralcode.in/wp-content/uploads/2020/10/Banner_Fraazo.png" alt="login-poster 1" height="480" width="350"/>
-              
-          </div>
-          <div class="overlay-panel overlay-right">
-              <img src="https://askmeguy.com/wp-content/uploads/2021/12/Onion-Free-Offer.jpg.webp" alt="login-poster 2" height="480" width="350"/>
-          </div>
-      </div>
-  </div>
- </div
+    <div class="overlay">
+        <div class="overlay-panel overlay-left">
+            <img src="https://referralcode.in/wp-content/uploads/2020/10/Banner_Fraazo.png" alt="login-poster 1" height="480" width="350"/>      
+        </div>
+        <div class="overlay-panel overlay-right">
+            <img src="https://askmeguy.com/wp-content/uploads/2021/12/Onion-Free-Offer.jpg.webp" alt="login-poster 2" height="480" width="350"/>
+        </div>
+    </div>
+</div>
+</div>
     </div>
 
   </div>
 
 </div>
+
 
 <script>
 // Get the modal
@@ -372,7 +377,61 @@ const signUpButton = document.getElementById('signUp');
         container.classList.remove("right-panel-active");
     });
 
+   //js file for login
 
+    function login () {
+    event.preventDefault();
+    let phonenumber = formcontainer.phonenumber.value;
+    let password = formcontainer.password.value;
+    let student = JSON.parse(localStorage.getItem('students')) || {};
+    // console.log(student);
+    if(student[phonenumber]==null) {
+        alert('User does not exist');
+    }
+    else if(password == student[phonenumber].password) {
+            loggedIn = true;
+            localStorage.setItem('loggedIn',loggedIn);
+            alert('login successful');
+            formcontainer.phonenumber.value = "";
+            formcontainer.password.value = "";
+            window.location.href = "footer.html";
+    }
+    else {
+            alert('Incorrect Email or Password');
+    }
+    // if(email == student.email && password == student.password) {
+    //     alert('login successful');
+    // }
+    // else {
+    //     alert('Incorrect Email or Password');
+    // }
+}
+
+//signup js
+
+var form = document.querySelector('#formContainer');
+form.addEventListener('submit',signUp);
+// localStorage.clear()
+var accounts = JSON.parse(localStorage.getItem('students')) || {};
+// accounts = {};
+function signUp() {
+    event.preventDefault();
+    let student = {
+        phonenumber: formContainer.phonenumber.value,
+        email: formContainer.email.value,
+        password: formContainer.password.value
+    };
+    formContainer.mobile.value = "";
+    formContainer.email.value = "";
+    formContainer.password.value = "";
+    // console.log(student);
+    // accounts.push(student);
+    accounts[student.email] = student;
+    console.log(accounts);
+    localStorage.setItem('students', JSON.stringify(accounts));
+    alert('Sign Up Successful. Click on Sign-In to continue');
+    // console.log(name);
+}
    
 </script>
 
