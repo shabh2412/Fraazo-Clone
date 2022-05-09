@@ -312,7 +312,7 @@ input {
   </div>
 
  <div class="form-container sign-in-container">
-      <form  id="signContainer ">
+      <form  id="signContainer">
           <h1 style="padding-bottom: 15px"> Login Now</h1>
          
           <input type="number" name="phone" placeholder="Phone Number">
@@ -413,9 +413,9 @@ function signUp() {
    //js file for login
 
    var form = document.querySelector('#signContainer');
-form.addEventListener('submit', login);
-var loggedIn = Boolean(localStorage.getItem('loggedIn')) || false;
-if(loggedIn) {
+   form.addEventListener('submit', login);
+   var loggedIn = Boolean(localStorage.getItem('loggedIn')) || false;
+ if(loggedIn) {
        // window.location.href = 'footer.html';
 }
 
@@ -425,7 +425,7 @@ function login () {
     let password = signContainer.password.value;
     let student = JSON.parse(localStorage.getItem('students')) || {};
     // console.log(student);
-    if(student[phone]==phone) {
+    if(student[phone]==null) {
         alert('User does not exist');
     }
     else if(password == student[phone].password) {
@@ -434,7 +434,7 @@ function login () {
             alert('login successful');
             signContainer.phone.value = "";
             signContainer.password.value = "";
-            window.location.href = "footer.html";
+            window.location.href = "otp.html";
     }
     else {
             alert('Incorrect Phone or Password');
