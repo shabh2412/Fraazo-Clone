@@ -1,0 +1,60 @@
+#box{
+    width: 20%;
+    background-color: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;;
+    height: 535px;
+    margin-top: 100px;
+    margin-left: 70px;
+    
+}
+div>div{
+    display: flex;
+    gap: 20px;
+    font-size: 24px;
+}
+
+#imgsize{
+    height: 120px;
+    width: 110px;
+    margin-left: 50px;
+}
+div>div>img{
+    height: 20px;
+    margin-top: 28px;
+}
+#edit {
+    text-align: center;
+}
+#log{
+    color: rgb(210, 80, 14);
+}
+ #grenry{
+    height: 200px;
+    width: 100%;
+    margin-top: 350px;
+
+} 
+#credits{
+    text-align: center;
+    margin-top: -550px;
+    margin-right: 300px;
+    font-size: large;
+
+}
+div>h3{
+    border: 1px solid grey;
+    width: 80%;
+    margin-left: 400px;
+    padding: 20px;
+    padding-left:px;
+}
+
+.btn{
+     width: 100%;
+     margin-bottom: 14px;
+     background-color: white;
+     font-size: 18px;
+     border: 1px solid white;
+     margin-top: 28px;
+     margin-right: 75px;
+     padding: 0px;
+}
