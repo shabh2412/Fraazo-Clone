@@ -9,8 +9,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 0; /* Sit on top */
   padding-top: 100px; /* Location of the box */
+  padding-left: 25%;
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -18,12 +19,14 @@ body {font-family: Arial, Helvetica, sans-serif;}
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(250, 241, 241); /* Fallback color */
   background-color: rgba(240, 240, 240, 0.4); /* Black w/ opacity */
+  justify-content: center;
+    align-items: center;
 }
 
 /* Modal Content */
 .modal-content {
   position: absolute;
-  text-align: center;
+  text-align:center;
   background-color: #fefefe;
   margin: 100px;
   padding: 0;
@@ -51,7 +54,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .close {
   color: white;
   float: right;
-  font-size: 28px;
+  font-size: 40px;
   font-weight: bold;
 }
 
@@ -63,7 +66,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 .modal-header {
-  padding: 2px 12px;
+  padding: 2px 2px;
   background-color: #f8f0f0;
   color: rgb(14, 1, 1);
 }
@@ -73,7 +76,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .modal-footer {
   padding: 2px 16px;
   background-color: #ffffff;
-  color: white;
+  color: rgb(238, 238, 238);
 }
 * {
     box-sizing: border-box;
@@ -297,7 +300,7 @@ input {
           <h1 style="padding-top: 15px"> Create Account</h1>
        <!--   <input type="text" name="fname" placeholder="First Name">
           <input type="text" name="lname" placeholder="Last Name"> -->
-          <!--  <input type="text" name="address" placeholder="Address">   -->
+          <input type="text" name="name" placeholder="Full Name">   
           <input type="email" name="email" id="email" placeholder="Enter email">
           <input type="password" name="password" placeholder="Password">
           <input type="phonenumber" name="phone" placeholder="Phone Number">
@@ -309,10 +312,10 @@ input {
   </div>
 
  <div class="form-container sign-in-container">
-      <form  id="formcontainer">
+      <form  id="signContainer ">
           <h1 style="padding-bottom: 15px"> Login Now</h1>
          
-          <input type="number" name="phonenumber" placeholder="Phone Number">
+          <input type="number" name="phone" placeholder="Phone Number">
          
           <input type="password" name="password" placeholder="Password">
           <a href="#" style="padding-left:150px; font-weight: bold"> Forgot Your Password?</a>
@@ -377,37 +380,9 @@ const signUpButton = document.getElementById('signUp');
         container.classList.remove("right-panel-active");
     });
 
-   //js file for login
 
-    function login () {
-    event.preventDefault();
-    let phonenumber = formcontainer.phonenumber.value;
-    let password = formcontainer.password.value;
-    let student = JSON.parse(localStorage.getItem('students')) || {};
-    // console.log(student);
-    if(student[phonenumber]==null) {
-        alert('User does not exist');
-    }
-    else if(password == student[phonenumber].password) {
-            loggedIn = true;
-            localStorage.setItem('loggedIn',loggedIn);
-            alert('login successful');
-            formcontainer.phonenumber.value = "";
-            formcontainer.password.value = "";
-            window.location.href = "footer.html";
-    }
-    else {
-            alert('Incorrect Email or Password');
-    }
-    // if(email == student.email && password == student.password) {
-    //     alert('login successful');
-    // }
-    // else {
-    //     alert('Incorrect Email or Password');
-    // }
-}
 
-//signup js
+    //signup js
 
 var form = document.querySelector('#formContainer');
 form.addEventListener('submit',signUp);
@@ -417,22 +392,61 @@ var accounts = JSON.parse(localStorage.getItem('students')) || {};
 function signUp() {
     event.preventDefault();
     let student = {
-        phonenumber: formContainer.phonenumber.value,
+        name: formContainer.name.value,
+        phone: formContainer.phone.value,
         email: formContainer.email.value,
         password: formContainer.password.value
     };
-    formContainer.mobile.value = "";
+    formContainer.name.value = "";
+    formContainer.phone.value = "";
     formContainer.email.value = "";
     formContainer.password.value = "";
     // console.log(student);
     // accounts.push(student);
-    accounts[student.email] = student;
+    accounts[student.name] = student;
     console.log(accounts);
     localStorage.setItem('students', JSON.stringify(accounts));
     alert('Sign Up Successful. Click on Sign-In to continue');
     // console.log(name);
 }
-   
+
+   //js file for login
+
+   var form = document.querySelector('#signContainer');
+form.addEventListener('submit', login);
+var loggedIn = Boolean(localStorage.getItem('loggedIn')) || false;
+if(loggedIn) {
+       // window.location.href = 'footer.html';
+}
+
+function login () {
+    event.preventDefault();
+    let phone = signContainer.phone.value;
+    let password = signContainer.password.value;
+    let student = JSON.parse(localStorage.getItem('students')) || {};
+    // console.log(student);
+    if(student[phone]==phone) {
+        alert('User does not exist');
+    }
+    else if(password == student[phone].password) {
+            loggedIn = true;
+            localStorage.setItem('loggedIn',loggedIn);
+            alert('login successful');
+            signContainer.phone.value = "";
+            signContainer.password.value = "";
+            window.location.href = "footer.html";
+    }
+    else {
+            alert('Incorrect Phone or Password');
+    }
+    // if(email == student.email && password == student.password) {
+    //     alert('login successful');
+    // }
+    // else {
+    //     alert('Incorrect Email or Password');
+    // }
+}
+  
 </script>
 
 

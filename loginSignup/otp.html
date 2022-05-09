@@ -5,8 +5,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
+ 
+   
+    
 </head>
 <style>
 new-login-area{
@@ -17,7 +23,7 @@ h3 {
   line-height: 30px;
 }
 label {
-  font-size: 12px;
+  font-size: 20px;
 }
 .request-otp-header {
   margin: 40px 0px;
@@ -25,6 +31,7 @@ label {
 .login-label label {
   color: #c74032;
   font-weight: 600;
+  font-size: 15px;
 }
 .input-edit {
   border: none !important;
@@ -39,10 +46,12 @@ label {
 }
 
 .request-otp {
-  margin-top: 40px;
+  margin-top: 35px;
   background: linear-gradient(#c74032, #91041b);
   font-size: 14px;
   color: #fff;
+
+ 
 }
 .request-otp:focus {
   box-shadow: none;
@@ -53,17 +62,26 @@ label {
 .resend-otp{
   margin-top:6px;
   cursor:pointer;
+  font-size: 10px
 }
 .form-control{
   width:45%
+  
+  
 }
 .btn  {
   width:45%
 }
+.container{
+    padding-top: 7%;
+    padding-left: 7%;
+}
+
+
 
 </style>
 <body>
-
+    
 <div class="container">         
 <div class="container new-login-area">
     <div id='sign-in' class='login-setup-section'>
@@ -80,16 +98,14 @@ label {
         <div class="form-group login-label">
             <label for="inputnumber">One Time Password</label>
             <input type="number" class="form-control input-edit" placeholder='Enter OTP' id="number">
-            <label class="pull-left resend-otp">Resend otp</label>
+            <label class="pull-left resend-otp">Resend OTP</label>
         </div>
-      <a href="signup1.html"><input class="btn btn-default btn-lg btn-block request-otp" type="Verify" value="Continue"/></a></a>
+      <a href="signup1.html"><input class="btn btn-default btn-lg btn-block request-otp"  type="Verify" value="Continue"/></a></a>
     </div>
-
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
+
       </div>
       
     </div>
@@ -116,8 +132,8 @@ function generateOTP() {
     // Declare a digits variable 
     // which stores all digits
     var digits = '0123456789';
-    let OTP = '';
-    for (let i = 0; i < 4; i++ ) {
+    var OTP = '';
+    for (var i = 0; i < 4; i++ ) {
         OTP += digits[Math.floor(Math.random() * 10)];
     }
     return OTP;

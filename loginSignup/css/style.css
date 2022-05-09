@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+}
+
+/* NAVIGATION BAR STYLING */
+
+nav {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    display: flex;
+    position:sticky;
+    top: 0;
+    justify-content: space-evenly;
+    width: 90;
+    box-sizing: border-box;
+    padding: 20px 10px;
+}
+nav > div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+nav > div:first-child {
+    flex-grow: 1;
+    justify-content: center;
+    display: flex;
+    /* border: 1px solid red; */
+}
+nav > div:first-child > * {
+    /* border: 1px solid teal; */
+    
+}
+nav > div:last-child {
+    flex-grow: 2;
+    /* justify-content: space-evenly; */
+    align-items: center;
+}
+nav > div:last-child > * {
+    flex-grow: 1;
+    display: flex;
+}
+
+nav > div:nth-child(2) {
+    flex-grow: 3;
+}
+nav > div:nth-child(2) > * {
+    width: 100%;
+}
+nav > div > div > img {
+    width: 125px;
+}
+body > nav > div:nth-child(3) > div {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid green; */
+    /* cursor: pointer; */
+}
+body > nav > div:nth-child(3) > div {
+    /* border: 1px solid red; */
+    cursor: pointer;
+}
+
+@media all and (min-width:100px) and (max-width:700px) {
+    nav {
+        display: none;
+    }
+}
+
+/* NAVIGATION BAR STYLING ENDS */
+
+/* HERO SECTION STYLING */
+#heroDiv {
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 10px;
+}
+
+#heroDiv > div:nth-child(2) {
+    flex-grow: 0.5;
+    border-radius: 20px;
+}
+
+#heroDiv > div:first-child {
+    flex-grow: 1;
+    /* background-color: red; */
+    display: flex;
+}
+
+.carousel-item {
+    border-radius: 20px;
+}
+
+#heroCarousel > div > div.carousel-item > img {
+    width: 100%;
+}
