@@ -57,8 +57,7 @@
     margin-top: -20px;
     margin-left: -14px;
 }
-#grenry{
-    height: 200px;
-    width: 100%;
-    margin-top: -50px;
+
+#ordersDiv, #creditsDiv, #inviteDiv, #helpDiv {
+    display: none;
 }

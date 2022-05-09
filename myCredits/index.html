@@ -67,7 +67,7 @@
 
               </div>
               <div id="mobileNumber" class="text-center">
-                  +91 <span></span>
+                  +91 <span></span> <span id="updateMobile" class="btn"><i class="bi bi-pencil"></i></span>
               </div>
           </div>
           <div id="head">
@@ -93,10 +93,69 @@
               </div>
           </div>
         </div>
-        <div id="contentSection">
-
+        <div id="contentSection" class="container">
+            <div id="ordersDiv" class="container w-75">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Items</th>
+                        <th scope="col">Total Cost</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-hover table-striped" id="ordersTable">
+                        
+                    </tbody>
+                  </table>
+            </div>
+            <div id="creditsDiv" class="container w-75">
+                <h2 class="m-2">Your Credits</h2>
+                <div class="container-fluid p-3 border">
+                    <p id="fraazoCredits" class="fs-5 mb-0">Available Fraazo Credits: ₹<span></span></p>
+                </div>
+                <div class="container-fluid p-3">
+                    <p class="fs-3">No Data Found</p>
+                </div>
+            </div>
+            <div id="inviteDiv" class="container w-75">
+                <h2 class="m-2 text-capitalize">invite a friend</h2>
+                <div class="container-fluid p-3 border">
+                    <p class="fs-5 mb-0">Invite your friend to shop on Fraazo & get ₹100 off on purchased item</p>
+                </div>
+                <div class="container-fluid p-3">
+                    <div class="btn btn-outline-success" id="inviteBtn">
+                        FRZ-5083296
+                    </div>
+                </div>
+            </div>
+            <div id="helpDiv" class="container w-75">
+                <div class="container-fluid row d-flex gap-2">
+                    <div class="col-3 mx-auto bg-light border my-2">
+                        <img src="../svg/chat.png" alt="chat" class="w-100 d-block">
+                        <p class="text-capitalize text-center">chat with us</p>
+                    </div>
+                    <div class="col-3 mx-auto bg-light border my-2">
+                        <img src="../svg/girlCalling.png" alt="" class="w-100 d-block">
+                        <p class="text-capitalize text-center">call us</p>
+                    </div>
+                    <div class="col-3 mx-auto bg-light border my-2">
+                        <img src="../svg/faq.svg" alt="faq" class="w-100 d-block">
+                        <p class="text-uppercase">faq's</p>
+                    </div>
+                    <div class="col-3 mx-auto bg-light border my-2">
+                        <img src="../svg/privacyPolicy.svg" alt="privacy policy" class="w-100 d-block">
+                        <p class="text-capitalize text-center">privacy policy</p>
+                    </div>
+                    <div class="col-3 mx-auto bg-light border my-2">
+                        <img src="../svg/termsAndConditions.png" alt="t & c" class="w-100 d-block">
+                        <p class="text-capitalize text-center">terms and conditions</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+
     <img class="d-block w-100" src="https://fraazo.com/static/footerDesign-26fcca451f726500fd06e7fc02d09cb4.svg" alt="prabhas">
   
 
@@ -177,6 +236,7 @@
     </div>
 </body>
 </html>
+<script src="./js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script>
     var homeImg = document.querySelector('#homeBtn');
@@ -191,7 +251,61 @@
         name : 'Rishabh',
         email: 'rishabhpanesar@gmail.com',
         contact: "7738738680",
-        password: "abcdef"
+        password: "abcdef",
+        orders: [
+        [
+  {
+    "id": 19,
+    "name": "Bitter Gourd (Karela)",
+    "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VBIT12.png",
+    "qty": "500",
+    "metric": "g",
+    "currentPrice": "23",
+    "benefits": "No Details Available",
+    "info": "No Details Available",
+    "category": "vegetables",
+    "count": 1
+  },
+  {
+    "id": 29,
+    "name": "Beans Cluster (Gavar)",
+    "image": "https://fraazo-master.s3.ap-south-1.amazonaws.com/products/VGAV12.png",
+    "qty": "250",
+    "metric": "g",
+    "currentPrice": "18",
+    "benefits": "No Details Available",
+    "info": "No Details Available",
+    "category": "vegetables",
+    "count": 1
+  },
+  {
+    "id": 9,
+    "name": "Wood Apple",
+    "image": "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/244/original/data?1613050070",
+    "qty": "1",
+    "metric": "pcs",
+    "currentPrice": "18",
+    "benefits": "No Details Available",
+    "info": "No Details Available",
+    "category": "fruits",
+    "count": 1
+  },
+  {
+    "id": 49,
+    "name": "Turmeric",
+    "image": "https://s3.ap-south-1.amazonaws.com/fraazo-prod/products/product_images/000/000/375/original/data?1623816989",
+    "qty": "250",
+    "metric": "g",
+    "currentPrice": "18",
+    "benefits": "No Details Available",
+    "info": "No Details Available",
+    "category": "herbs",
+    "count": 1
+  }
+],
+
+        ],
+        credits: 0,
     }
 
 
@@ -228,4 +342,7 @@
             }
         }
     }
+
+
+
 </script>
