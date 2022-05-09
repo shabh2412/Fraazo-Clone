@@ -1,6 +1,8 @@
 #delverytype{
-    border: 2px solid rgb(145, 7, 7);
+    border: 2px solid rgb(233, 220, 220);
     /* display: flex; */
+    width: 95%;
+    margin: auto;
     text-align: center;
     justify-content: center;
     align-items: center;
@@ -11,13 +13,13 @@
     /* justify-content: space-between; */
 }
 #delverytype>div:nth-child(1){
-    border: 2px solid rgb(202, 202, 202);
+    /* border: 2px solid rgb(202, 202, 202); */
     /* width: 60%; */
     /* display: flex; */
     /* justify-content: space-between; */
 }
  #expeted_delivery{
-    border: 2px solid rgb(210, 26, 226);
+    /* border: 2px solid rgb(210, 26, 226); */
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(2,1fr);
@@ -25,7 +27,6 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin: auto;
-
 }
 
  #expeted_delivery>div:nth-child(1){
@@ -36,7 +37,7 @@
     border-radius: 10px;
 }  
 #expeted_delivery>div:nth-child(2){
-    border: 2px solid rgb(107, 99, 99);
+    border: 1px solid rgb(107, 99, 99);
     /* width: 60%; */
     height:auto;
     /* background-color: rgb(218, 209, 209); */
@@ -59,6 +60,10 @@
 }
 .exp_not{
     cursor: pointer;
+}
+.price_box{
+    border-radius: 10px;
+    width: 100%;
 }
 #bill_data{
     border: 2px solid red;

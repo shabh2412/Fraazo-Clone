@@ -87,6 +87,7 @@
     document.querySelector("#upi").addEventListener("click",function(){
         document.querySelector("#payment_collecting").innerHTML=null;
         var pay_box=document.createElement("div")
+        pay_box.setAttribute("class","pay_styl")
         var plable=document.createElement("p")
         plable.innerText="ENTER UPI ID"
         var col_upiid=document.createElement("input");
@@ -95,11 +96,12 @@
         var conf_pay_box=document.createElement("div")
         var makepayment=document.createElement("p")
         makepayment.innerText="PAY"+" "+total_price
+        conf_pay_box.setAttribute("class","make_pay")
         conf_pay_box.append(makepayment)
         conf_pay_box.style.cursor="pointer"
         conf_pay_box.addEventListener("click",function(){
             console.log("payment succesfull")
-            
+            placeorder()
         })
 
         pay_box.append(tot_pay_box,plable,col_upiid,conf_pay_box)
@@ -111,6 +113,8 @@
         var pay_box=document.createElement("div")
         var wallet_box=document.createElement("div")
         wallet_box.setAttribute("id","wallet_box")
+
+        pay_box.setAttribute("class","pay_styl")
 
         var wallet_img=document.createElement("div")
         var mobike=document.createElement("img")
@@ -137,9 +141,16 @@
 
 
         var conf_pay_box=document.createElement("div")
-        var makepayment=document.createElement("button")
+        conf_pay_box.setAttribute("class","make_pay")
+        var makepayment=document.createElement("p")
         makepayment.innerText="PAY"+" "+total_price
         conf_pay_box.append(makepayment)
+        conf_pay_box.setAttribute("class","make_pay")
+        conf_pay_box.style.cursor="pointer"
+        conf_pay_box.addEventListener("click",function(){
+            console.log("payment succesfull")
+            placeorder()
+        })
 
         pay_box.append(tot_pay_box,wallet_box,conf_pay_box)
         document.querySelector("#payment_collecting").append(pay_box,)
@@ -155,10 +166,19 @@
         var col_upiid=document.createElement("input");
         col_upiid.placeholder="state bank of india"
         
+        pay_box.setAttribute("class","pay_styl")
+
         var conf_pay_box=document.createElement("div")
-        var makepayment=document.createElement("button")
+        var makepayment=document.createElement("p")
         makepayment.innerText="PAY"+" "+total_price
         conf_pay_box.append(makepayment)
+        conf_pay_box.setAttribute("class","make_pay")
+
+        conf_pay_box.style.cursor="pointer"
+        conf_pay_box.addEventListener("click",function(){
+            console.log("payment succesfull")
+            placeorder()
+        })
 
         pay_box.append(tot_pay_box,plable,col_upiid,conf_pay_box)
         document.querySelector("#payment_collecting").append(pay_box,)
@@ -173,6 +193,8 @@
         plable.innerText="Card Number"
         var col_upiid=document.createElement("input");
         card_number.append(plable,col_upiid)
+
+        pay_box.setAttribute("class","pay_styl")
 
         var expir_cvv_box=document.createElement("div")
 
@@ -199,9 +221,15 @@
         
         
         var conf_pay_box=document.createElement("div")
-        var makepayment=document.createElement("button")
+        var makepayment=document.createElement("p")
         makepayment.innerText="PAY"+" "+total_price
         conf_pay_box.append(makepayment)
+        conf_pay_box.setAttribute("class","make_pay")
+        conf_pay_box.style.cursor="pointer"
+        conf_pay_box.addEventListener("click",function(){
+            console.log("payment succesfull")
+            placeorder()
+        })
 
         pay_box.append(tot_pay_box,card_number,expir_cvv_box,card_name_box,conf_pay_box)
         document.querySelector("#payment_collecting").append(pay_box,)
@@ -218,6 +246,8 @@
         img_box.setAttribute("src","data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEIAAABCCAYAAADjVADoAAAES0lEQVR4Xu2ay2sTQRzHv5NNNmnSJtH6AAVBRJDWBwhWTEDBm6kgKMWj9eTFo49/wFNvXkRP6knxptJ68eKhRQu+EMXXzVsfmvd7szIxMZtkszOb3Wy2ZfbQS2bm95vPfn+PmS6BeOoEiODwj4AA0VCCACFAtCcFoQihCKEI3UIpQkOEhggNRmjMzEjx2VwZgGdTdJsEvxYTC3t491LPEfH5hMo7YaONU6HOLU2/uMnym8SfJ+bgwXXWwI38++L0ArMokM2shubLU4Ha0vSCZPQyHQFRKZWRS2e6/CCEILJtqyNiY6lCF0T69x/UlNp/ByWvhLEtUdMOJ1fXuecMGkpfIPQ2EN0+zr0pMwA6Fw2GRyH7/dy2eAeaBlEqFFHI5rrWD0XG4JNlpl0rELSLmwHPdAqAaRB00X4VoTfv8m4f088v2RrepJSucXbCcAyEHoRP8SATgnbAocV823ifX0YoPGZqjV6D9fxTsuq2r1eX64msZ9VQqgpyqTRC0TAkybDyIJ/JolwsdflgFQRd0C5VGIXs59k3xJbyaWTk1v5W4ju3oxvo0xUFyykFz1aqPd+8HTAMc5eKO5ZB0P6A9gm8z9sTQcia00xnOOitM3AQRqHBuzEj0mZC4/yHIn7kWr2L1r7k9WJsS4TXJd1xrGpmWRG9DHgJ8D5mLVnaWU6HBoJuwowiLrwv4nteXxF2JM2BgqiWK8im0qYk2wmHJ0e4HkQxl0cxX+gJgqWIw4t58F6EWE2YA1WEUqkik0z1BeLkcgF/KrwYrPcTAwXRqx1vkvkYC8LTcSXyYq2KG9/4y21zLVcrggWC/v4uFoRPAyOvAMdft7fSPElmw4Ogm3x5bAQ75RYNGhFHl/hhyH4ZQYtnjoGHRilfQCHH3tSjIwEcHG2/IHeqYvAo13JDxWOkKf3bB/w4Pd5+3uCBYTUseHy0BUS1UkE2yddPXNrlw7W9rTsKFgg2BBXJ1d911sRDEBnXvwMdeGg03zbLkDYhxqIS7k3+O5UagaDnC3rOMHp4L5FY/tmiiH5gsCqFR5IQ3mp8Ydxrc3oqchQETyyyANDfvbIPo5Ewc6irQVDvabdJu85+HnZOaK1aqylIrye7zLhCEVqvWHLUjh0ZDcE/EjDNjiZpmqxZHSjLF1tzhNEucqkMKuX21joQGkEgaO7OwjSpxgTXgOh3A3bM4ynvJLZwZh9RyU87DLp1DZYa6j0I/ROfTzwGcNGtG7HiFw+E/yCahk7MJ856VPWU1nCpWLpmxZGhzFVV0H9d1mq9r/46/WJ+QDH54Dj/7clQdm2PUQGiwVGAECDaQ0ooglcRE/en7hJCrtiTkty7ClMR1PXNXjlUqE+4QBx4ODUuqWTNve/Tmmf17yPMLDHxYOoVATlpZo6bx7Z9MeNmR530zZQinHTMaVsCBG/5dPrNDMueUIRQhMkWe1hSddquCA0RGiI0dKNOhEYDy1/Nc9WulhceAwAAAABJRU5ErkJggg==")
         img_box.style.width="40px"
         img_box.style.height="40px"
+        pay_box.setAttribute("class","pay_styl")
+
 
         var plable=document.createElement("p")
         plable.innerText="Please keep exact change to help us serve you better"
@@ -228,12 +258,44 @@
         var makepayment=document.createElement("button")
         makepayment.innerText="PAY"+" "+total_price
         conf_pay_box.append(makepayment)
+        conf_pay_box.setAttribute("class","make_pay")
+        conf_pay_box.style.cursor="pointer"
+        conf_pay_box.addEventListener("click",function(){
+            console.log("payment succesfull")
+            
+            placeorder()
+
+        })
 
         pay_box.append(tot_pay_box,show_box,conf_pay_box)
         document.querySelector("#payment_collecting").append(pay_box,)
     })
     
+    var order_cart=JSON.parse(localStorage.getItem("order_cart")) || []
 
+    var cart=JSON.parse(localStorage.getItem("cart"))
+    // console.log(cart)
+    function placeorder(){
+       window.location.href="succesfull.html"
+    }
+
+
+
+    // document.querySelector("conf_pay_box").addEventListener("click",function(){
+
+    //     orderconfirm()
+    // })
+
+    // function orderconfirm(){
+    //     console.log("payment done")
+    //     window.location.href("paymentdone.html")
+    //     var cart=JSON.parse(localStorage.getItem("cart"))
+    //     var dilevery_time=jso
+    //     .
+    //     var complet_cart_data={
+
+    //     }
+    // }
 var total_price=JSON.parse(localStorage.getItem("total_price"))
 console.log(total_price)
 if(total_price>0){

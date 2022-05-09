@@ -2,18 +2,41 @@ var cart=JSON.parse(localStorage.getItem("cart"))
 console.log(cart)
 displaydata(cart)
 
-var total_price;
+var total_price=JSON.parse(localStorage.getItem("total_price"))
+
+
+var total_bill=JSON.parse(localStorage.getItem("total_price")) || 0
 
 var total_price=cart.reduce(function(acc,ele){
-    return acc+Number(ele.currentPrice);
+    return acc+Number(ele.currentPrice)*(ele.count);
 },0);
+console.log(total_price)
 localStorage.setItem("total_price",JSON.stringify(total_price))
+
+if(total_price>0){
+    var discount=0.1;
+    //price saving 
+    var pricesaving=Math.floor(total_price*discount);
+    //delivery charge
+    var del_cahrge=30;
+    //total_bill
+    var total_bill=del_cahrge+total_price-pricesaving;
+    localStorage.setItem("total_bill",JSON.stringify(total_bill))
+}else{
+    total_bill=0;
+    
+}
+// var total_price=cart.reduce(function(acc,ele){
+//     return acc+Number(ele.currentPrice);
+// },0);
+// localStorage.setItem("total_price",JSON.stringify(total_price))
 
 // total_bill_data()
 // total_bill_data()
 //checkcode() function  
 var cupon_code=[{code1:"AMAN10"}]
 function checkcode(){
+   
     var enter_cup_code=document.createElement("input")
     var inpt_submit=document.createElement("submit")
     inpt_submit.innerText="Applly code";
@@ -116,6 +139,8 @@ coupan_code_text_box.style.cursor="pointer"
 coupan_code_text_box.addEventListener("click",function(){
     checkcode()
 })
+var total_bill=JSON.parse(localStorage.getItem("total_bill"));
+
 var coupan_code_text=document.createElement("p")
 coupan_code_text.innerText="Apply Coupon/Referral";
 coupan_code_text_box.append(coupan_code_text);
@@ -214,7 +239,7 @@ var box2_payement=document.createElement("div")
 var box1_1_text=document.createElement("p")
 var box1_2_text=document.createElement("p")
 box1_1_text.innerText="Total"
-box1_2_text.innerText=total_bill;
+box1_2_text.innerText=total_bill
 box1_payement.append(box1_1_text,box1_2_text)
 
 // var box_address=document.createElement("div")
@@ -232,7 +257,6 @@ localStorage.setItem("total_bill_data",JSON.stringify(payment_box))
 document.querySelector("#aman_bill_details").append(coupan_code_box,bill_details,total_item_price,hr1,cart_amaount,delivery_charge,hr2,total_pay,payment_box)
 
 }
-
 
 else{
     total_bill=0;
@@ -288,6 +312,7 @@ else{
 
     em_box.append(em_img,txt_box,txt_box2,letshoping)
     empty_main_box.append(em_box)
+    empty_main_box.setAttribute("id","let-star")
 
     document.querySelector("#em").append(empty_main_box)
 
@@ -328,7 +353,7 @@ function displaydata(data){
 // quantity 
 
         var product_quantity=document.createElement("p")
-        product_quantity.innerText=ele.qty +" "+ele.metric;
+        product_quantity.innerText=ele.qty*ele.count +" "+ele.metric;
         // quantity.append(product_quantity)
         prod_dis.append(prod_name,product_quantity)
 
@@ -341,17 +366,20 @@ function displaydata(data){
         var btn2=document.createElement("button")
         var prod_h_count=document.createElement("div")
 
-        prod_h_count.innerText=JSON.parse(localStorage.getItem("no_of_Min_quan"));
-        div_count.append(ele.qty+" "+ele.metric)
+        prod_h_count.innerText=ele.count
+        console.log(prod_h_count.innerHTML)
+        div_count.append(ele.count+" "+ele.metric)
 
         btn1.innerText="-"
         btn2.innerText="+"
 
         btn2.addEventListener("click",function(){
-            
+            increaseCount(ele)
+            window.location.reload()
         })
         btn1.addEventListener("click",function(){
-            
+            decreaseCount(ele)
+            window.location.reload()
         })
         btn1div.append(btn1)
         btn2div.append(btn2)
@@ -368,15 +396,46 @@ remove_cart.addEventListener("click",function (){
     delfun(ele)
 })
 
+
+
+// counter 
+function increaseCount(ele) {
+    cart.forEach(function(elem) {
+        if(elem.id== ele.id) {
+          
+            elem.count++;
+        }
+    })
+    localStorage.setItem("cart",JSON.stringify(cart));
+    displaydata(cart);
+}
+function decreaseCount(ele,index) {
+    cart.forEach(function(elem) {
+        if(elem.id== ele.id) {
+            elem.count--;
+        }
+    })
+    if(ele.count<1){
+        delfun(ele,index)
+    }
+    localStorage.setItem("cart",JSON.stringify(cart));
+    displaydata(cart);
+}
+
+
+
+
+
+
 // prod_price of price data
 
         var price_h4=document.createElement("h6")
-        price_h4.innerText= "₹"+ele.currentPrice;
+        price_h4.innerText= "₹"+ele.currentPrice*ele.count;
         prod_price.append(price_h4)
 
 //append data to localstorage to cart
         cart_box.append(prod_img,prod_dis,quantity,prod_count,prod_price,remove_cart)
-        document.querySelector("#amancart_part").append(cart_box)
+        document.querySelector("#cart").append(cart_box)
 
     })
 }
@@ -384,26 +443,28 @@ remove_cart.addEventListener("click",function (){
 
 // removing function 
 function delfun(ele,index){
-    aman_cart_data.splice(index,1)
-    localStorage.setItem("cart_data",JSON.stringify(aman_cart_data))
-    console.log(aman_cart_data)
+    cart.splice(index,1)
+    localStorage.setItem("cart",JSON.stringify(cart))
+    console.log(cart)
     window.location.reload();
 }
 
+
+
 // quantityfunc(count) 
-var count=1;
-function quantityincfunc(ele){
-    count++;
-    console.log(count)
-    localStorage.setItem("number_item",JSON.stringify(count))
-    // window.location.reload()
-}
-function quantitydecfunc(ele){
-    count--;
-    localStorage.setItem("number_item",JSON.stringify(count))
+// var count=1;
+// function quantityincfunc(ele){
+//     count++;
+//     console.log(count)
+//     localStorage.setItem("number_item",JSON.stringify(count))
+//     // window.location.reload()
+// }
+// function quantitydecfunc(ele){
+//     count--;
+//     localStorage.setItem("number_item",JSON.stringify(count))
     
-    // window.location.reload()
-}
+//     // window.location.reload()
+// }
 
 // function decfunc(ele){
 // console.log("click")

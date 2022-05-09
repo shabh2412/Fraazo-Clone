@@ -82,7 +82,18 @@ font-size: 30px;
     margin: auto;
 
 }
-@media all and (min-width: 50px) and (max-width: 650px) {
+#let-star>div>div{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    
+}
+#let-star>div>div>img{
+    /* border: 2px solid red; */
+    margin: auto;
+    text-align: center;
+}
+@media all and (min-width: 50px) and (max-width: 750px) {
 
     #aman_sub_cart_section{
         display: grid;
@@ -97,8 +108,18 @@ font-size: 30px;
         background-color: rgb(211, 255, 246);
        
     }
-    #amancart_part{
+    #cart{
         width: 100%;
+    }
+
+    #let-star>div>div{
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: center;
+       
+    }
+    #let-star>div>div>img{
+        display: flex;
     }
     
   }

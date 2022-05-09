@@ -1,6 +1,6 @@
 #add_main{
     display: flex;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     justify-content: space-around;
 }
 #bill_data{
@@ -33,9 +33,9 @@
     
 }
 #add_box3{
-    border: 2px solid red;
+    border: 2px solid rgb(233, 223, 223);
     width: 95%;
-    margin: auto;
+    margin: 20px auto;
     /* border: 2px solid red; */
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -47,6 +47,7 @@
     margin: auto; 
 }
 #address{
+  border: 2px solid rgb(211, 199, 199);
   
 }
 #display_add{
@@ -56,7 +57,7 @@
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: auto;
     margin: 10px;
-    border: 2px solid red;
+    border: 2px solid rgb(224, 224, 224);
 }
 #display_add>div>p{
     margin-left: 10px;
@@ -66,14 +67,17 @@
     color: aqua;
     font-weight: bolder;
     margin-left: 300px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 #display_add{
     /* border: 2px solid red; */
-    width: 30%;
+    /* width: 30%; */
     font-weight: bold;
 }
-
+.price_box{
+    border-radius: 10px;
+    width: 100%;
+}
 
 #h2_tag>h2{
     margin:30px;
@@ -91,7 +95,7 @@
     #display_add{
         width: 90%;
         margin: auto;
-        border: 2px solid red;
+        /* border: 2px solid red; */
         border: 2px solid transparent;
         width: 100%;
     }
