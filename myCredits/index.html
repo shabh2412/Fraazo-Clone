@@ -16,7 +16,7 @@
         <div>
             <!-- brand and location -->
             <div>
-                <img src="../svg/logo.svg" alt="fraazo">
+                <img id="homeBtn" src="../svg/logo.svg" alt="fraazo">
             </div>
             <div>
                 <button class="btn">
@@ -32,15 +32,27 @@
         <div>
             <div>
                 <i class="fa-solid fa-cart-shopping"></i>
-                <p class="mb-0">Cart</p>
+                <p class="mb-0">
+                    <a href="./cartpage/cart.html">
+                        Cart
+                    </a>
+                </p>
             </div>
             <div>
                 <i class="fa-solid fa-wallet"></i>
-                <p class="mb-0">Credits</p>
+                <p class="mb-0">
+                    <a href="./myCredits/">
+                        Credits
+                    </a>
+                </p>
             </div>
             <div>
                 <i class="fa-solid fa-user"></i>
-                <p class="mb-0">Login</p>
+                <p class="mb-0">
+                    <a href="./loginSignup/">
+                        Login
+                    </a>
+                </p>
             </div>
         </div>
 
@@ -59,23 +71,23 @@
               </div>
           </div>
           <div id="head">
-              <div id="btn">
+              <div class="btnDiv">
                   <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAATCAYAAACZZ43PAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFTSURBVHgB7ZQxb8IwEIXvxVGaNsyJ2goo3TvDDDs7e3f+Red2756dnc5lLnuIIoHMjgqo8fUMtEIhElSsvSWxfe/znc9nUIlFURQ6vt8FUZNgKmzwblarWGs9L/qiRBwo33uRlYDZGRI4EKcOMc/z5bovkMW+v1sEuL7fZHCYM/o6TZMNtFodKoUndeV1ZDjY93eKAAN+sLv9iK3pLBvbLzMaRf8DwF8NuxC7SlFPhsFJKomQoIbTySSGPXF1efEq4X0AZsyEJgiRJDMoyKQq0Ew8YqYGgFb+ueq55HmhXTXGxDbX67taSGwq0zSL99U39VrbgJLZJItv6/W2gFqibZx9BgdlNIwBMY2L8zkhlvnkKGBXvqRk/o1K7OwU/gEWsF5v29Ol+1NFbEy0VTuLTS/I7XuWn5MBG4j0wyzNHn8flEiup8KOfMTAjv5aLkf2cfkGJYWOd3BeY1QAAAAASUVORK5CYII=" alt="">
                   <button class="btn" id="orders">My Orders</button>
               </div>
-              <div id="btn">
+              <div class="btnDiv">
                   <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAUCAYAAABvVQZ0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEaSURBVHgBzZTNTcNAEIXfrA2KhIR8NFgiU4JLgEoQFUAHQAdQCVBBkgpwBywRCB994gQ7vM0Pt0ixs4d8l9WM5aeZ2Z0nIJVWtSG7NpiiF/L85eeP/1GppWY4fDUGBml6KEFg5wHhovUf0xjnDge3AegMjknvtxUqVZVibxlE1zlHkRh0fYQ2kS/LRX2qZ6wwzLb/9VcXjXLOcVStb72c6HjCVM2vBXYgzm5RGdUb3uYV8KMYQAb35OAu83ViNTOPAXBEXTwdEpJULEcC+BpeAmyaROzTz2/iuX9tFloUI4yKJGJHOJ7QKJokbdpqe1K/M3sXSB2XFTsilSqXPMSe6WnmMQAWQ5PEvcRgaXThjukxBkDXmX3DPfwB2xVZk+woqxoAAAAASUVORK5CYII=" alt="">
                   <button class="btn" id="credits">My Credits</button>
               </div>
-              <div id="btn">
+              <div class="btnDiv">
                   <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAIdSURBVHgBlVM7cNNAEN09GSex/JGYiTQYHJOkTUMVatS7ogkFFT3UpKLAPX16U7uicerQ0CQNRT628JhTgwk+AvHojl3ZYYyQk3hnJJ32dt/tvX2LMDW/VtsSQjRoacMtTRiz3+/1Ory2+HW/Xn+CAnYRjSvAfEMwcNNjADwQEBRK5UN1fh7lpuCBMSYadMMXsIBVH9Za01sciRm/nA3yfd+mx5v599JAaMQJgE6oyGWdxEnWcr4JiN69tbUOCEHX0UG1XoviX5evpZRROkdkAVkr+YBBklOJBwaZlICeVcg/zsrJBIpjUDDH4hjVrYFkGLapKydpP/vktN3/AZF+Ggb1RnpDX/zenQXjNfvScYhio7q+3rAc131OTD4gR7Hk3h3/GA4/c4BSajwafv9QrJRsiv4yOOu9YR/vcUcrq6tPATXzZRuj7yCJ8S310dYAp0h6AtITGmz151yBJ8AS8IqJJ+0dUo5P1Uqr7DiBBjMmMTYLdvEUhXjEii07le3C0vInqkJdAZRd9yUp4VlyTQ3vvvbC92XH3Wad/6Mj2e8f0OfAp5GhUdmxVpb2Eh3BRAbEnCIa9gZnYTtdaaYgZbe7Tzx8JD01UOAOUc1VteKLyzaJMbP9mUAJ2CSh5W9udmA0UvMA/gJp0D+pY1tzAY+Po+sADGifwzDpgoVN7pYBIWEBw0R/aMdEPLKDyc1dzdMCRpJR1L02TcLRH5Ci4YcRQKs4AAAAAElFTkSuQmCC" alt="">
                   <button class="btn" id="invite">Invite A Friend</button>
               </div>
-              <div id="btn">
+              <div class="btnDiv">
                   <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTguMDAwMTYgMTQuNjY2N0MxMS42ODIxIDE0LjY2NjcgMTQuNjY2OCAxMS42ODE5IDE0LjY2NjggOEMxNC42NjY4IDQuMzE4MSAxMS42ODIxIDEuMzMzMzMgOC4wMDAxNiAxLjMzMzMzQzQuMzE4MjYgMS4zMzMzMyAxLjMzMzUgNC4zMTgxIDEuMzMzNSA4QzEuMzMzNSAxMS42ODE5IDQuMzE4MjYgMTQuNjY2NyA4LjAwMDE2IDE0LjY2NjdaIiBzdHJva2U9IiM0QzRDNEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTYuMDYwMDYgNS45OTk5N0M2LjIxNjc5IDUuNTU0NDEgNi41MjYxNiA1LjE3ODcxIDYuOTMzMzYgNC45MzkzOUM3LjM0MDU2IDQuNzAwMDcgNy44MTkzMiA0LjYxMjU5IDguMjg0ODQgNC42OTI0NEM4Ljc1MDM2IDQuNzcyMjkgOS4xNzI2IDUuMDE0MzIgOS40NzY3OCA1LjM3NTY1QzkuNzgwOTUgNS43MzY5OSA5Ljk0NzQzIDYuMTk0MzIgOS45NDY3MiA2LjY2NjYzQzkuOTQ2NzIgNy45OTk5NyA3Ljk0NjcyIDguNjY2NjQgNy45NDY3MiA4LjY2NjY0IiBzdHJva2U9IiM0QzRDNEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTggMTEuMzMzM0g4LjAwNjY3IiBzdHJva2U9IiM0QzRDNEMiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==" alt="">
                   <button class="btn" id="help">Help & Support</button>
               </div>
-              <div id="btn">
+              <div class="btnDiv">
                   <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYgMTRIMy4zMzMzM0MyLjk3OTcxIDE0IDIuNjQwNTcgMTMuODU5NSAyLjM5MDUyIDEzLjYwOTVDMi4xNDA0OCAxMy4zNTk0IDIgMTMuMDIwMyAyIDEyLjY2NjdWMy4zMzMzM0MyIDIuOTc5NzEgMi4xNDA0OCAyLjY0MDU3IDIuMzkwNTIgMi4zOTA1MkMyLjY0MDU3IDIuMTQwNDggMi45Nzk3MSAyIDMuMzMzMzMgMkg2IiBzdHJva2U9IiNEMDE0MTQiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTEwLjY2NiAxMS4zMzMyTDEzLjk5OTMgNy45OTk4NEwxMC42NjYgNC42NjY1IiBzdHJva2U9IiNEMDE0MTQiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPHBhdGggZD0iTTE0IDhINiIgc3Ryb2tlPSIjRDAxNDE0IiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=" alt="">
                   <button id="logout" class="btn">Logout</button>
               </div>
@@ -85,7 +97,7 @@
 
         </div>
     </div>
-    <img class="d-block w-100" id="grenry" src="https://fraazo.com/static/footerDesign-26fcca451f726500fd06e7fc02d09cb4.svg" alt="prabhas">
+    <img class="d-block w-100" src="https://fraazo.com/static/footerDesign-26fcca451f726500fd06e7fc02d09cb4.svg" alt="prabhas">
   
 
     <div id="footerSection" class="container-fluid footerColor text-white">
@@ -166,6 +178,13 @@
 </body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script>
+    var homeImg = document.querySelector('#homeBtn');
+    homeImg.style.cursor="pointer";
+    homeImg.addEventListener("click",function(){
+        window.location.href="../index.html";
+    })
+</script>
 
 <script>
     var user = {
