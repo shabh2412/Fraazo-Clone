@@ -63,7 +63,11 @@ function displayCredits() {
     creditsDiv.style.display = 'block';
     inviteDiv.style.display = 'none';
     helpDiv.style.display = 'none';
-    var credits = user.credits || 0;
+    // var credits = user.credits || 0;
+    var credits = 0;
+    if(user.credits !== null) {
+        credits = user.credits;
+    }
     document.querySelector('#fraazoCredits > span').innerText = credits;
 }
 function displayinvite() {
