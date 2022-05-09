@@ -6,6 +6,13 @@
     box-sizing: border-box;   
 }
 
+a {
+    text-decoration: none !important;
+}
+#footerSection a {
+    color: white !important;
+}
+
 /* font stylings */
 
 .fs-16 {
@@ -34,8 +41,8 @@
     font-weight: 500;
 }
 
-.fa-solid {
-    color: #999999;
+.fa-solid, .fa-solid+p>a {
+    color: #999999 !important;
 }
 
 /* font styling ends */
@@ -95,7 +102,7 @@ body > nav > div:nth-child(3) > div {
 }
 
 body > nav > div:nth-child(3) > div:hover > * {
-    color: black;
+    color: black !important;
 }
 
 body > nav > div:nth-child(3) > div {
