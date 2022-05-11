@@ -22,7 +22,18 @@
 
 <!-- https://github.com/shabh2412/Fraazo-Clone/graphs/contributors -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/static/v1?label=All+Contributers&message=5&color=orange)](https://github.com/shabh2412/Fraazo-Clone/graphs/contributors)
+[![All Contributors](https://img.shields.io/static/v1?label=All+Contributers&message=5&color=orange)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
   
   </div>
+  
+  Fraazo is an online food and grocery shopping platform, where the users can buy fresh fruits, vegetables, oats, and kitchen staples directly from the ease of their home.
+ 
+ # Features
+ 
+ - Login / Sign up
+ - Best deals
+ - Product details page
+ - Place orders
+
+# Demo - https://fraazo-clone.netlify.app/
