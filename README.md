@@ -18,3 +18,11 @@
     <img src="https://img.shields.io/badge/Bootstrap-blue" alt="Bootstrap" >
   </a>
 </p>
+<div align='center'>
+
+<!-- https://github.com/shabh2412/Fraazo-Clone/graphs/contributors -->
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/static/v1?label=All+Contributers&message=5&color=orange)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+  
+  </div>
