@@ -22,7 +22,7 @@
 
 <!-- https://github.com/shabh2412/Fraazo-Clone/graphs/contributors -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/static/v1?label=All+Contributers&message=5&color=orange)](#contributors-)
+[![All Contributors](https://img.shields.io/static/v1?label=All+Contributers&message=5&color=orange)](https://github.com/shabh2412/Fraazo-Clone/graphs/contributors)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
   
   </div>
