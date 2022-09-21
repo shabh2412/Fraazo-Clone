@@ -1,5 +1,5 @@
 ### About
-Fraazo is an online food and grocery shopping platform, where the users can buy fresh fruits, vegetables, oats, and kitchen staples directly from the ease of their home.
+This is a working on clone of the online food and grocery shopping platform fraazo. This project is the part of the construct week of Unit-2 at Masai School, this project has been done in order to learn the basic working of a website by implementing HTML5, CSS3, JavaScript. Working on this project was really fun and we learned a lot of new things that goes into building a website. This is our first collaborative project under the guidance of Masai Team to facilitate the full stack web development curriculam.
 
 
 <p align="center">
