@@ -1,3 +1,7 @@
+### About
+Fraazo is an online food and grocery shopping platform, where the users can buy fresh fruits, vegetables, oats, and kitchen staples directly from the ease of their home.
+
+
 <p align="center">
 
   <a href="https://fraazo-clone.netlify.app/" target="_blank">
